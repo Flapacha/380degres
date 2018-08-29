@@ -1,0 +1,9 @@
+@mixin normalMobile($rule){
+
+  @media (min-width:320px) {
+
+    $rule
+
+  }
+
+}

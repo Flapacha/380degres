@@ -1,0 +1,31 @@
+const path = require("path");
+
+module.exports = {
+
+  mode : "development",
+
+  entry: "./ressources/sass/",
+
+  output: {
+
+    path: path.resole(__dirname,"public/css/admin"),
+    filename: "admin.css",
+
+  },
+
+  module: {
+
+    rules: [
+
+      {
+
+        test: /\.scss$/,
+        include: []
+
+      }
+
+    ]
+
+  }
+
+};
