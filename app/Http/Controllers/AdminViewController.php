@@ -21,15 +21,24 @@ class AdminViewController extends Controller
 
     public function showNewPost(){
 
+        $article = new Article();
         $categories = Categorie::all();
 
-        return view("admin.pages.new_items.new_post")->with(["categories"=>$categories]);
+        return view("admin.pages.new_items.new_post")->with(["article"=>$article,"categories"=>$categories,"edit"=>false]);
     }
 
+    public function showArticleEdit($articleID){
+
+        $article = Article::find($articleID);
+        $categories = Categorie::all();
+
+        return view("admin.pages.new_items.new_post")->with(["article"=>$article,"categories"=>$categories,"edit"=>true]);
+    }
 
     public function showArticleListe(){
 
-        $article = Article::paginate(15);
+//        $article = Article::paginate(15);
+        $article = Article::orderBy('id','DESC')->paginate(15);
 
         return view("admin.pages.list_items.post_items")->withArticles($article);
     }

@@ -104,12 +104,12 @@
 
                                             <div>
 
-                                                <button class="btn btn-icon btn-info text-white">
+                                                <a href="{{ route("showArticleEdit",["articleId"=>$article->id]) }}" class="btn btn-icon btn-info text-white">
                                                     <i class="mdi mdi-pencil"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-danger text-white">
+                                                </a>
+                                                <a href="" class="btn btn-icon btn-danger text-white">
                                                     <i class="mdi mdi-close"></i>
-                                                </button>
+                                                </a>
 
                                             </div>
 

@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -46,6 +47,11 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
+        ],
+
+        'real_public' => [
+            'driver' => 'local',
+            'root' => public_path(''),
         ],
 
         'public' => [

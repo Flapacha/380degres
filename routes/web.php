@@ -21,6 +21,6 @@ Route::get('/rubrique2',"BlogController@showRubrique2Home")->name("rubrique2Home
 Route::get('/rubrique3',"BlogController@showRubrique3Home")->name("rubrique3Home");
 Route::get('/rubrique4',"BlogController@showRubrique4Home")->name("rubrique4Home");
 
-
+Route::post("/abonnement","BlogController@doAbonnement")->name('actionAbonnement');
 
 

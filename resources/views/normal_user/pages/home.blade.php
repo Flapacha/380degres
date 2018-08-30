@@ -295,7 +295,9 @@
 
                     </div>
 
-                    <div class="col-12 left-abonnement box-shadow mt-4 d-md-none d-lg-block">
+                    <form method="post" action="{{ route('actionAbonnement') }}" class="col-12 left-abonnement box-shadow mt-4 d-md-none d-lg-block">
+
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                         <div>
 
@@ -308,7 +310,7 @@
                                 <form action="#" class="form-group">
 
                                     <label for="" class="text-center text-white font-weight-bold">ABONNEZ VOUS A NOTRE NEWSLETTER</label>
-                                    <input type="text" class="form-control" datatype="email" placeholder="adresse@email.com">
+                                    <input type="text" class="form-control" datatype="email" placeholder="adresse@email.com" name="email">
 
                                     <button class="btn avenir-light form-control my-4">
 
@@ -323,7 +325,7 @@
 
                         </div>
 
-                    </div>
+                    </form>
 
                 </div>
 

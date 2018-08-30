@@ -95,13 +95,13 @@
 
         <div class="col-lg-9">
 
-            <img src="{{$article->headerImage->path}}" width="100%" height="400px" alt="">
+            <img src="/{{$article->headerImage->path}}" width="100%" height="400px" alt="">
 
         </div>
 
         <div class="col-lg-9 py-md-5">
 
-            {!! $article->article_content  !!}}}
+            {!! htmlspecialchars_decode($article->article_content)  !!}
 
             @for($i=0;$i<0;$i++)
 
