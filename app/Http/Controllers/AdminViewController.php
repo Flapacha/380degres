@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Categorie;
+use Illuminate\Http\Request;
 
 class AdminViewController extends Controller
 {
@@ -34,6 +35,13 @@ class AdminViewController extends Controller
 
         return view("admin.pages.new_items.new_post")->with(["article"=>$article,"categories"=>$categories,"edit"=>true]);
     }
+
+    public function showLogin(Request $request){
+
+
+        return view("admin.pages.connexion");
+    }
+
 
     public function showArticleListe(){
 

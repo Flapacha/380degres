@@ -143,25 +143,25 @@
 
                                         <div class="article-image">
 {{--                                            <img src="{{ $actualite->headerImage->path  }}" width="100%" alt="">--}}
-                                            <img src="/tests/slider-item.jpg" width="100%" alt="">
+                                            <img src="{{ $article->headerImage->path }}" width="100%" alt="">
                                         </div>
 
                                         <div class="bg-white text-black-50 content">
 
                                             <div class="h4 avenir-light px-3 py-3">
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                {{ $actualite->title }}
                                             </div>
 
                                             <div class="text-center h5 avenir-light px-2 py-2">
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                {{ $actualite->sous_title }}
                                             </div>
 
                                             <div class=" px-3 py-3 text-right">
-                                                par <span class="text-color-380 font-weight-bold">DAVID BECKAM</span>
+                                                par <span class="text-color-380 font-weight-bold">{{ $article->author->nom." ".$article->author->prenom }}</span>
                                             </div>
 
                                             <div class="avenir-light  px-3 py-3 font-weight-bold">
-                                                Le 31/12/1990
+                                                Le {{ $article->created_at->format("d/m/Y") }}
                                             </div>
 
                                         </div>
@@ -192,69 +192,69 @@
 
                     </div>
 
-                    <div class="row col-lg-12 r-4">
+                    {{--<div class="row col-lg-12 r-4">--}}
 
-                        <div class="col-lg-12 header">
+                        {{--<div class="col-lg-12 header">--}}
 
-                            <div class="px-4 py-4 text-white font-weight-bold">
-                                VOIR AUSSI
-                            </div>
+                            {{--<div class="px-4 py-4 text-white font-weight-bold">--}}
+                                {{--VOIR AUSSI--}}
+                            {{--</div>--}}
 
-                            <div class="card">
+                            {{--<div class="card">--}}
 
-                                <div class="card-body">
+                                {{--<div class="card-body">--}}
 
-                                    <div class="row">
+                                    {{--<div class="row">--}}
 
-                                        @for($i=0;$i<3;$i++)
+                                        {{--@for($i=0;$i<3;$i++)--}}
 
-                                         <div class="col-12">
+                                         {{--<div class="col-12">--}}
 
-                                            <div>
-                                                titre de l'actualité
-                                            </div>
+                                            {{--<div>--}}
+                                                {{--titre de l'actualité--}}
+                                            {{--</div>--}}
 
-                                            <div class="row">
+                                            {{--<div class="row">--}}
 
-                                                <div class="col-2">
+                                                {{--<div class="col-2">--}}
 
-                                                    <img src="/images/dogba.jpg" class="w-100" alt="">
+                                                    {{--<img src="/images/dogba.jpg" class="w-100" alt="">--}}
 
-                                                </div>
+                                                {{--</div>--}}
 
-                                                <div class="col-10">
+                                                {{--<div class="col-10">--}}
 
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
-                                                    PATITE DESCRIPTION DE L'ARTISTE QUI SUIT
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
 
-                                                </div>
+                                                {{--</div>--}}
 
-                                            </div>
+                                            {{--</div>--}}
 
-                                        </div>
+                                        {{--</div>--}}
 
-                                            <div class="bar w-100 mx-4 my-4"></div>
+                                            {{--<div class="bar w-100 mx-4 my-4"></div>--}}
 
-                                        @endfor
+                                        {{--@endfor--}}
 
-                                    </div>
+                                    {{--</div>--}}
 
-                                </div>
+                                {{--</div>--}}
 
-                            </div>
-
-
-                        </div>
+                            {{--</div>--}}
 
 
-                    </div>
+                        {{--</div>--}}
+
+
+                    {{--</div>--}}
 
 
                 </div>

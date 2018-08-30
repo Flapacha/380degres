@@ -111,23 +111,23 @@
 
                                 <div class="box-shadow">
 
-                                    <a href="/article/2/Mr.">
+                                    <a href="{{ route("articleDetail",["articleID"=>$article->id,"articleTitle"=>$article->title]) }}">
 
                                         <img src="/tests/abidjan.png" width="264px" height="164px" alt="">
 
                                         <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
 
                                             <div class="text-left ml-3 mb-3 px-1 py-1 h4 avenir-light text-color-380 author">
-                                                Dr. Mara Paucek Prof. Justen Jones MD
+                                                {{ $article->author->nom." ".$article->author->prenom }}
                                             </div>
 
                                             <div class="m-auto w-75 bar my-3"></div>
 
-                                            <h3 class="h5 titre avenir-light mt-2">Mr.</h3>
+                                            <h3 class="h5 titre avenir-light mt-2">{{ $article->title }}</h3>
 
 
                                             <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
-                                                Marketing de reseau
+                                                {{ $article->sous_title }}
                                             </div>
 
                                             <div class="">

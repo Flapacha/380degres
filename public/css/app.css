@@ -1055,12 +1055,11 @@ footer .lighned-color {
   position: absolute;
   top: 0;
   left: 0;
-  background: #c5c2cb;
-  -webkit-transition: border-radius 0.8s 0s,-webkit-transform 0.4s;
-  transition: border-radius 0.8s 0s,-webkit-transform 0.4s;
-  transition: transform 0.4s,border-radius 0.8s 0s;
-  transition: transform 0.4s,border-radius 0.8s 0s,-webkit-transform 0.4s;
-  border-radius: 50%;
+  background: #ff887b;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
 }
 
 .actualite-item .content {

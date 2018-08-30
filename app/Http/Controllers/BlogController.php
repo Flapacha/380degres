@@ -20,7 +20,7 @@ class BlogController extends Controller
 
         $lastArticle = Article::where("categorie_id",1)->orderBy("id","DESC")->first();
 
-        $autreArticles = Article::where([["id","!=",$lastArticle->id]])->paginate(15);
+        $autreArticles = Article::where([["id","!=",$lastArticle->id]])->paginate(8);
         $rubrique4 = Article::where("categorie_id",4)->orderBy("id","DESC")->paginate(6);
 
         $actualite = Article::where("categorie_id",2)->paginate(3);
@@ -53,6 +53,7 @@ class BlogController extends Controller
 
         return view("");
     }
+
 
     public function showRubrique1Home(){
 

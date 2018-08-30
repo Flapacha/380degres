@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Administrateur;
 use App\Models\Article;
 use App\Models\Image;
 use App\Models\NewsLetterUser;
@@ -60,6 +61,34 @@ class AdminActionController extends Controller
         $image->save();
 
         return $image;
+    }
+
+    public function connectAdmin(Request $request){
+
+        $admin = Administrateur::where(
+
+        [
+            ["login",$request->login],
+            ["password",$request->password]
+        ]
+
+        )->first();
+
+        dump($admin);
+
+        if($admin==null){
+
+            \Session::flash("errorr",1);
+
+            return redirect()->back()->with("error",1);
+        }
+
+        else{
+
+
+            session(["admin"=>$admin->id]);
+        }
+
     }
 
 }
