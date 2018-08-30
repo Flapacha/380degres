@@ -84,6 +84,7 @@
 
         </div>
 
+
     </div>
 
 @endsection
@@ -117,6 +118,24 @@
                 A VOIR AUSSI
             </div>
 
+        </div>
+
+        <div>
+
+            <div>
+
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.1&appId=695464670813834&autoLogAppEvents=1';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+                <div class="fb-comments" data-href="https://blog.380degre.com/{{ route("articleDetail",["articleID"=>$article->id,"articleTitle"=>$article->title]) }}" data-numposts="9"></div>
+            </div>
         </div>
 
     </div>

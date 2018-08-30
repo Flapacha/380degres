@@ -4,7 +4,7 @@
 
     <div class="home-slider">
         
-        <div>
+        <a class="d-block" href="#">
 
             <img src="{{ $lastArticle->headerImage->path }}" width="100%" alt="">
 
@@ -12,22 +12,27 @@
 
                 <div class="row py-5 px-5 d-none d-md-flex">
 
-                    <div class="col-6 date text-white">
-                        DATE DE L'ARTICLE
+                    <div class="col-2 date text-white">
+                        {{ $lastArticle->created_at->format("d/m/Y \à h:i") }}
                     </div>
 
-                    <div class="info col-6 text-right">
+                    <div class="col-10">
 
-                        <div class="">
+                        <div class="row w-100">
 
-                            <div>TITRE DE L'ARTICLE</div>
-                            <div>AUTEUR DE L'ARTICLE</div>
+                        <div class="col-10 text-right">
+
+                            <div class="h1 text-white"> {{ $lastArticle->title }} </div>
+                            <div class="h4 text-white">{{ $lastArticle->author->nom." ".$lastArticle->author->prenoms }}</div>
 
                         </div>
 
-                        <div class="author-icon">
+                        <div class="col-2 author-icon">
                             <img src="/images/pp.jpg" width="100%" alt="">
                         </div>
+
+                        </div>
+
 
 
                     </div>
@@ -37,7 +42,7 @@
 
             </div>
 
-        </div>
+        </a>
         
     </div>
 
@@ -279,12 +284,12 @@
 
                                     <div class="h4 avenir-light text-color-380">
                                         {{--{{ $r4->title  }}--}}
-                                        TITRE DE L'ARTICLE
+                                        {{ $r4->title }}
                                     </div>
 
                                     <div class="avenir-light mini-description">
                                         {{--{{ $r4->sous_title  }}--}}
-                                        Lorem ipsum dolor sit amet, consectetur ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+                                        {!! $r4->sous_title !!}
                                     </div>
 
                                 </a>

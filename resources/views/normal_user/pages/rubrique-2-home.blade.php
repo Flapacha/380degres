@@ -35,6 +35,12 @@
 
             <div class="col-lg-3 avenir-light">
 
+                @for()
+
+
+
+                @endfor
+
                 <div class=" box-shadow px-3 py-3 my-2">
 
                     <div class="font-weight-bold h4 text-color-380">
@@ -223,13 +229,17 @@
                                         <a href="#" class="py-3 border-bottom border-dark item">
 
                                             <div class="h4 avenir-light text-color-380">
-                                                {{--{{ $r4->title  }}--}}
-                                                TITRE DE L'ARTICLE
+
+                                                {{ $voirAussi->title  }}
+
+                                                {{--TITRE DE L'ARTICLE--}}
                                             </div>
 
                                             <div class="avenir-light mini-description">
-                                                {{--{{ $r4->sous_title  }}--}}
-                                                Lorem ipsum dolor sit amet, consectetur ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+
+                                                {{ $voirAussi->sous_title  }}
+
+                                                {{--Lorem ipsum dolor sit amet, consectetur ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...--}}
                                             </div>
 
                                         </a>

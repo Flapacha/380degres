@@ -66,6 +66,7 @@ class BlogController extends Controller
         $voirAussis = Article::where("categorie_id",4)->paginate(4);
 
         $rubrique2LastArticle = Article::all()->last();
+
         $rubrique2Articles = Article::where("categorie_id",2)->paginate(6);
         
         $view = view("normal_user.pages.rubrique-2-home")->with(

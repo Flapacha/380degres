@@ -740,7 +740,7 @@ footer .lighned-color {
   border-bottom: #ff646b solid 20px;
 }
 
-.home-slider > div {
+.home-slider > a {
   position: relative;
 }
 

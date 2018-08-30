@@ -13,6 +13,7 @@
 
     @yield("custom_head")
 
+
 </head>
 
     <body>

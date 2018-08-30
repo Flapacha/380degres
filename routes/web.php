@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', function(){
-    return "en maintenance";
-});
-Route::get('/home', "BlogController@showHome");
+//Route::get('/', function(){
+//    return "en maintenance";
+//});
+
+//Route::get('/home', "BlogController@showHome");
+Route::get('/', "BlogController@showHome");
+
 Route::get('/article/{articleID}/{articleTitle}', "BlogController@showArticle")->name("articleDetail");
+
 Route::get('/test', "BlogController@showHome");
 
 Route::get("/newsletter/success","BlogController@showAbonnementSuccess")->name("newsletterInscriptionSuccess");
