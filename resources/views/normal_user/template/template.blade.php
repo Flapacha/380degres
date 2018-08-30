@@ -55,20 +55,31 @@
 
                 <ul class="row px-1">
 
-                    <li class="col-3 text-center font-weight-bold px-3 py-3 background-color-380">
-                        <a href=""></a>RUBRIQUE 1
+                    {{--<li class="col-3 text-center font-weight-bold px-3 py-3 background-color-380">--}}
+                        {{--<a href=""></a>RUBRIQUE 1--}}
+                    {{--</li>--}}
+
+                    <li class="col-3 text-center font-weight-bold px-3 py-3
+">
+                        <a href="#">RUBRIQUE 1</a>
+
                     </li>
 
-                    <li class="col-3 text-center px-3 py-3">
+                    <li class="col-lg text-center px-3 py-3">
                         <a href="{{  route("rubrique2Home") }}">RUBRIQUE 2</a>
                     </li>
 
-                    <li class="col-3 text-center px-3 py-3">
+                    <li class="col-lg text-center px-3 py-3">
                         <a href="{{  route("rubrique3Home") }}">RUBRIQUE 3</a>
                     </li>
 
-                    <li class="col-3 text-center px-3 py-3">
+                    <li class="col-lg text-center px-3 py-3">
                         <a href="{{  route("rubrique4Home") }}">RUBRIQUE 4</a>
+                    </li>
+
+
+                    <li class="col-lg text-center px-3 py-3">
+                        <a href="{{  route("rubrique4Home") }}">RUBRIQUE 5</a>
                     </li>
 
 

@@ -35,11 +35,6 @@
 
             <div class="col-lg-3 avenir-light">
 
-                @for()
-
-
-
-                @endfor
 
                 <div class=" box-shadow px-3 py-3 my-2">
 
