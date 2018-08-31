@@ -23,11 +23,15 @@ Route::get('/article/{articleID}/{articleTitle}', "BlogController@showArticle")-
 Route::get('/test', "BlogController@showHome");
 
 Route::get("/newsletter/success","BlogController@showAbonnementSuccess")->name("newsletterInscriptionSuccess");
+Route::get("/tags/{tagID}",'BlogController@showTagList')->name("tagList");
 
 Route::get('/rubrique2',"BlogController@showRubrique2Home")->name("rubrique2Home");
 Route::get('/rubrique3',"BlogController@showRubrique3Home")->name("rubrique3Home");
 Route::get('/rubrique4',"BlogController@showRubrique4Home")->name("rubrique4Home");
 
+Route::get("/abonnement/succes","BlogController@showSuccessAbonnement");
+
 Route::post("/abonnement","BlogController@doAbonnement")->name('actionAbonnement');
+
 
 

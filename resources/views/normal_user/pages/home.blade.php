@@ -129,7 +129,7 @@
                     @endforeach
 
 
-                    <div class="row col-lg-12">
+                    <div class="row col-lg-12 my-5">
 
                         <div class="col-md-12">
 
@@ -174,20 +174,6 @@
                                     </a>
 
                                     @endforeach
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12">
-
-                            <div class="row">
-
-                                <div class="col-3">
-
-                                    momo
 
                                 </div>
 

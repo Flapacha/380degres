@@ -19,7 +19,13 @@
     <body>
 
         <header>
-            
+
+            <div class="background-color-380 text-white px-3 py-1 avenir-light text-right">
+
+                suivez nous sur les reseaux !
+
+            </div>
+
             <div class="containere px-1">
                 <ul class="row">
 

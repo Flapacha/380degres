@@ -15,7 +15,7 @@
 
                 <div>
 
-                    <img src="{{ $lastArticle->headerImage->path }}" width="100%" alt="">
+                    <img src="{{ $rubrique2[0]->headerImage->path }}" width="100%" alt="">
 
                 </div>
 
@@ -24,7 +24,7 @@
                     <div class="avenir-light h4">
 
 {{--                        {{ $lastArticle->title }}--}}
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                    {{ $rubrique2[0]->sous_title }}
 
                     </div>
 
@@ -32,59 +32,36 @@
 
 
             </div>
+
+            @php $articleIndex++;$finalIndex=$articleIndex+3; @endphp
 
             <div class="col-lg-3 avenir-light">
+            @for($articleIndex;$articleIndex<$finalIndex;$articleIndex++)
 
 
-                <div class=" box-shadow px-3 py-3 my-2">
 
-                    <div class="font-weight-bold h4 text-color-380">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </div>
 
-                    <div class="px-3 py-1 font-weight-bold">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...
-                    </div>
+                    <div class=" box-shadow px-3 py-3 my-2">
 
-                    <div class="text-right">
-                        par <span class="font-weight-bold text-color-380">KOUADIO KOUAKOU JACOB</span>
-                    </div>
+                        <div class="font-weight-bold h4 text-color-380">
+                            {{ $rubrique2[0]->title }}
+                        </div>
 
-                </div>
-
-                <div class=" box-shadow px-3 py-3 my-2">
-
-                    <div class="font-weight-bold h4 text-color-380">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </div>
-
-                    <div class="px-3 py-1 font-weight-bold">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...
-                    </div>
-
-                    <div class="text-right">
-                        par <span class="font-weight-bold text-color-380">KOUADIO KOUAKOU JACOB</span>
-                    </div>
-
-                </div>
-                <div class=" box-shadow px-3 py-3 my-2">
-
-                    <div class="font-weight-bold h4 text-color-380">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </div>
-
-                    <div class="px-3 py-1 font-weight-bold">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...
-                    </div>
+                        <div class="px-3 py-1 font-weight-bold">
+                            {{ $rubrique2[0]->sous_title }}
+                        </div>
 
                         <div class="text-right">
-                        par <span class="font-weight-bold text-color-380">KOUADIO KOUAKOU JACOB</span>
+                            par <span class="font-weight-bold text-color-380">{{ $rubrique2[0]->author->nom." ".$rubrique2[0]->author->prenom }}</span>
+                        </div>
+
                     </div>
 
-                </div>
 
-            </div>
 
+            @endfor
+
+        </div>
         </div>
 
         <div class="row">

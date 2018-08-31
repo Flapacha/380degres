@@ -41,9 +41,13 @@ class BlogController extends Controller
 
         $article = Article::find($articleID);
 
+        $voirAussis = $article->relatedArticle(3);
+
+
         return view("normal_user.pages.rubrique-1-item")->with(
             [
-                "article"=>$article
+                "article"=>$article,
+                "voirAussis"=>$voirAussis
             ]
         );
     }
@@ -53,7 +57,6 @@ class BlogController extends Controller
 
         return view("");
     }
-
 
     public function showRubrique1Home(){
 
@@ -67,19 +70,27 @@ class BlogController extends Controller
 
         $rubrique2LastArticle = Article::all()->last();
 
-        $rubrique2Articles = Article::where("categorie_id",2)->paginate(6);
+
+        $rubrique2Article = Article::where(function($where) use($rubrique2LastArticle){
+
+
+
+        });
+
+        $rubrique2Articles = Article::where("categorie_id",2)->paginate(8);
         
         $view = view("normal_user.pages.rubrique-2-home")->with(
             [
                 "lastArticle"=>$rubrique2LastArticle,
                 "articles"=>$rubrique2Articles,
-                "voirAussis"=>$voirAussis
+                "voirAussis"=>$voirAussis,
+                "rubrique2"=>$rubrique2Articles,
+                "articleIndex"=>0
             ]
         );
 
         return $view;
     }
-
 
     public function showRubrique3Home(){
 
@@ -89,7 +100,6 @@ class BlogController extends Controller
 
     }
 
-
     public function doAbonnement(Request $request){
 
         $newsletter = new NewsLetterUser();
@@ -98,6 +108,12 @@ class BlogController extends Controller
         $newsletter->save();
 
         return redirect()->route("newsletterInscriptionSuccess");
+    }
+
+    public function showSuccessAbonnement(Request $request){
+
+
+        return view("normal_user.pages.success_abonnement");
     }
 
 }

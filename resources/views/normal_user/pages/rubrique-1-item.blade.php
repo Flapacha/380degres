@@ -1,9 +1,26 @@
 @extends("normal_user.template.template")
 
+@section("custom_head")
+
+    <meta property="og:url"  content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title"  content="380 Degrés Blog - {{$article->title}}" />
+    <meta property="og:description"   content="{{$article->sous_title}}" />
+    <meta property="og:image"         content="{{ $article->headerImage->path }}" />
+
+@endsection
+
 @section("custom_header_content")
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.1&appId=695464670813834&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
-
-    <div class="container">
+    <div class="container-fluid px-5">
 
         <div class="row">
 
@@ -18,9 +35,11 @@
                         {{ $article->categorie->libelle }}
 
                     </div>
+
                     <div class="display-3 vertical-center">
                         {{ $article->title }}
                     </div>
+
 
                 </div>
 
@@ -33,26 +52,41 @@
 
                         <div>
 
-                            <span class="avenir-light">
-                                VOUS AVEZ AIMÉ L'ARTICLE ? PARTAGEZ AVEC VOS AMIS
+                            <span class="avenir-light font-weight-bold h5 px-5">
+                                vous avez aimez l'article ? partagez avec vos amis
                             </span>
 
-                            <span class="share-icon rounded-circle background-fb text-white">
+                            {{--<span class="share-icon rounded-circle background-fb text-white">--}}
                                 {{--<i class="fab fa-facebook-f"></i>--}}
-                            </span>
+                            {{--</span>--}}
 
 
-                            <span class="share-icon rounded-circle background-twitter text-white">
+                            {{--<span class="share-icon rounded-circle background-twitter text-white">--}}
                                 {{--<i class="fab fa-twitter"></i>--}}
-                            </span>
+                            {{--</span>--}}
 
-                            <span class="share-icon rounded-circle background-google-plus text-white">
+                            {{--<span class="share-icon rounded-circle background-google-plus text-white">--}}
                                 {{--<i class="fab fa-google-plus-g"></i>--}}
-                            </span>
+                            {{--</span>--}}
 
+                            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+
+                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">
+                                Tweet <i class="mdi mdi-check"></i>
+                            </a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
                         </div>
 
+                        <div class="avenir-light h5 px-5 font-weight-bold py-3">
+
+                            @foreach($article->articleTags as $articleTag)
+
+                                <a href="{{ route("tagList",["tag"=>$articleTag->tag->id]) }}">#{{ $articleTag->tag->libelle }}</a>
+                                
+                            @endforeach    
+                                
+                        </div>
 
                 </div>
 
@@ -72,8 +106,6 @@
                         {{--<img src="/images/pp.jpg" class="" alt="">--}}
                     </div>
 
-
-
                 </div>
 
             </div>
@@ -91,7 +123,7 @@
 
 @section("content")
 
-    <div class="container">
+    <div class="container-fluid px-5">
 
 
         <div class="col-lg-9">
@@ -100,7 +132,7 @@
 
         </div>
 
-        <div class="col-lg-9 py-md-5">
+        <div class="col-lg-11 py-md-5 px-md-5 avenir-light">
 
             {!! htmlspecialchars_decode($article->article_content)  !!}
 
@@ -118,6 +150,37 @@
                 A VOIR AUSSI
             </div>
 
+            <div class="row">
+
+                @foreach($voirAussis as $voirAussi)
+
+                    <div class=" col-6 row my-3">
+
+                        <div class="col-6">
+
+                            <div>
+                                <img src="{{ $article->headerImage->path }}" width="100%" alt="">
+                            </div>
+
+                        </div>
+
+                        <div class="col-4">
+
+                            <div class="text-center px-4 py-4 display-3">
+                                {{ $article->title }}
+                            </div>
+
+                            <div class="text-center px-4 py-4 h5">
+                                {{ $article->sous_title }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                @endforeach
+
+        </div>
         </div>
 
         <div>
