@@ -46,9 +46,6 @@ class Article extends Model
     }
 
     public function articleTags(){
-
-
-
         return $this->hasMany(\App\Models\ArticleTags::class,"article_id");
     }
 

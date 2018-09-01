@@ -10,8 +10,10 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Article;
+use App\Models\ArticleTags;
 use App\Models\Categorie;
 use App\Models\NewsLetterUser;
+use App\Models\Tags;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -113,7 +115,7 @@ class BlogController extends Controller
                 "voirAussis"=>$voirAussis,
                 "rubrique2"=>$rubrique2Articles,
                 "articleIndex"=>0,
-                "rubrique"=>Categorie::find(1)
+                "rubrique"=>Categorie::find(2)
             ]
         );
 
@@ -152,10 +154,14 @@ class BlogController extends Controller
         return $view;
     }
 
-    public function showTagList(){
+    public function showTagList($tagID){
+
+        $tags = ArticleTags::where("tag_id",$tagID)->paginate(7);
+
+        $otherTags = Tags::where("id","!=",$tagID)->paginate(7);
 
 
-        return view("normal_user.pages.tags_articles");
+        return view("normal_user.pages.tags_articles")->withTags($tags)->withTag(Tags::find($tagID))->with("otherTags",$otherTags);
     }
 
     public function showAuthorDetailAndArticle(){
