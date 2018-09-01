@@ -144,7 +144,7 @@
 
                                     @foreach($actualites as $actualite)
 
-                                    <a href="#" class="col-4 mt-3 actualite-item">
+                                    <a href="{{ route("articleDetail", ["articleID"=>$actualite->id,"articleTitre"=>$actualite->title]) }}" class="col-4 mt-3 actualite-item">
 
                                         <div class="article-image">
 {{--                                            <img src="{{ $actualite->headerImage->path  }}" width="100%" alt="">--}}

@@ -23,6 +23,14 @@ header nav ul li {
   font-size: 1.0rem;
 }
 
+header nav ul li a {
+  color: #000 !important;
+}
+
+header nav ul .actived a {
+  color: #fff !important;
+}
+
 header .fab {
   font-size: 35px !important;
   letter-spacing: 10px;

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Article;
+use App\Models\Categorie;
 use App\Models\NewsLetterUser;
 use Illuminate\Http\Request;
 
@@ -53,20 +54,46 @@ class BlogController extends Controller
     }
 
     public function showAbonnementSuccess(){
-
-
-        return view("");
+        return view("normal_user.pages.success_abonnement");
     }
 
     public function showRubrique1Home(){
 
+        request()->request->add(["categorieID"=>1]);
+
+        $voirAussis = Article::where("categorie_id","!=",1)->paginate(4);
+
+        $rubrique2LastArticle = Article::all()->last();
 
 
+        $rubrique2Article = Article::where(function($where) use($rubrique2LastArticle){
+
+
+
+        });
+
+        $rubrique2Articles = Article::where("categorie_id",1)->paginate(8);
+
+        $view = view("normal_user.pages.rubrique-2-home")->with(
+            [
+                "lastArticle"=>$rubrique2LastArticle,
+                "articles"=>$rubrique2Articles,
+                "voirAussis"=>$voirAussis,
+                "rubrique2"=>$rubrique2Articles,
+                "articleIndex"=>0,
+                "rubrique"=>Categorie::find(1)
+            ]
+        );
+
+        return $view;
     }
 
     public function showRubrique2Home(){
 
-        $voirAussis = Article::where("categorie_id",4)->paginate(4);
+        request()->request->add(["categorieID"=>2]);
+
+
+        $voirAussis = Article::where("categorie_id","!=",2)->paginate(4);
 
         $rubrique2LastArticle = Article::all()->last();
 
@@ -78,14 +105,15 @@ class BlogController extends Controller
         });
 
         $rubrique2Articles = Article::where("categorie_id",2)->paginate(8);
-        
+
         $view = view("normal_user.pages.rubrique-2-home")->with(
             [
                 "lastArticle"=>$rubrique2LastArticle,
                 "articles"=>$rubrique2Articles,
                 "voirAussis"=>$voirAussis,
                 "rubrique2"=>$rubrique2Articles,
-                "articleIndex"=>0
+                "articleIndex"=>0,
+                "rubrique"=>Categorie::find(1)
             ]
         );
 
@@ -94,10 +122,79 @@ class BlogController extends Controller
 
     public function showRubrique3Home(){
 
+        request()->request->add(["categorieID"=>3]);
+
+
+        $voirAussis = Article::where("categorie_id","!=",3)->paginate(4);
+
+        $rubrique2LastArticle = Article::all()->last();
+
+
+        $rubrique2Article = Article::where(function($where) use($rubrique2LastArticle){
+
+
+
+        });
+
+        $rubrique2Articles = Article::where("categorie_id",3)->paginate(8);
+
+        $view = view("normal_user.pages.rubrique-2-home")->with(
+            [
+                "lastArticle"=>$rubrique2LastArticle,
+                "articles"=>$rubrique2Articles,
+                "voirAussis"=>$voirAussis,
+                "rubrique2"=>$rubrique2Articles,
+                "articleIndex"=>0,
+                "rubrique"=>Categorie::find(3)
+            ]
+        );
+
+        return $view;
     }
+
+    public function showTagList(){
+
+
+        return view("normal_user.pages.tags_articles");
+    }
+
+    public function showAuthorDetailAndArticle(){
+
+
+        return view("normal_user.pages.author_articles");
+    }
+
 
     public function showRubrique4Home(){
 
+        request()->request->add(["categorieID"=>4]);
+
+
+        $voirAussis = Article::where("categorie_id","!=","4")->paginate(4);
+
+        $rubrique2LastArticle = Article::all()->last();
+
+
+        $rubrique2Article = Article::where(function($where) use($rubrique2LastArticle){
+
+
+
+        });
+
+        $rubrique2Articles = Article::where("categorie_id",4)->paginate(8);
+
+        $view = view("normal_user.pages.rubrique-2-home")->with(
+            [
+                "lastArticle"=>$rubrique2LastArticle,
+                "articles"=>$rubrique2Articles,
+                "voirAussis"=>$voirAussis,
+                "rubrique2"=>$rubrique2Articles,
+                "articleIndex"=>0,
+                "rubrique"=>Categorie::find(4)
+            ]
+        );
+
+        return $view;
     }
 
     public function doAbonnement(Request $request){
@@ -110,10 +207,7 @@ class BlogController extends Controller
         return redirect()->route("newsletterInscriptionSuccess");
     }
 
-    public function showSuccessAbonnement(Request $request){
 
 
-        return view("normal_user.pages.success_abonnement");
-    }
 
 }

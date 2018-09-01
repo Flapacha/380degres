@@ -7,8 +7,12 @@
 
         <div class="row">
 
-            <div class="text-color- 380 col-lg-12 display-3 px-5 py-5">
-                A L'ASSAUT DU MARKETING ET DE LA COMMUNICATION
+            <div class="text-color- 380 col-lg-12 display-3 px-5 py-5 text-center mb-5" style="background: url('/images/marketing_bg.png');padding: 100px!important;border-top:solid #ff7e80 18px;border-bottom:solid #ff7e80 9px">
+
+                <div class="font-weight-bold avenir-light text-center text-white d-inline-block background-color-380 px-3 py-1">
+                    {{ $rubrique->libelle }}
+                </div>
+
             </div>
 
             <div class="col-lg-6 offset-lg-1">
@@ -41,21 +45,21 @@
 
 
 
-                    <div class=" box-shadow px-3 py-3 my-2">
+                    <a href="{{ route("articleDetail",["articleID"=>$rubrique2[$articleIndex]->id,"articleTitle"=>$rubrique2[$articleIndex]->title]) }}" class="box-shadow d-block px-3 py-3 my-2">
 
                         <div class="font-weight-bold h4 text-color-380">
-                            {{ $rubrique2[0]->title }}
+                            {{ $rubrique2[$articleIndex]->title }}
                         </div>
 
                         <div class="px-3 py-1 font-weight-bold">
-                            {{ $rubrique2[0]->sous_title }}
+                            {{ $rubrique2[$articleIndex]->sous_title }}
                         </div>
 
                         <div class="text-right">
                             par <span class="font-weight-bold text-color-380">{{ $rubrique2[0]->author->nom." ".$rubrique2[0]->author->prenom }}</span>
                         </div>
 
-                    </div>
+                    </a>
 
 
 
@@ -163,10 +167,12 @@
 
                                 <div class="content px-3 py-3">
 
-                                    <form action="#" class="form-group">
+                                    <form action="{{ route("actionAbonnement") }}" method="post" class="form-group">
+
+                                        <input type="hidden" value="{{ csrf_token() }}" name="_token">
 
                                         <label for="" class="text-center text-white font-weight-bold">ABONNEZ VOUS A NOTRE NEWSLETTER</label>
-                                        <input type="text" class="form-control" datatype="email" placeholder="adresse@email.com">
+                                        <input type="text" class="form-control" datatype="email" placeholder="adresse@email.com" name="email" required>
 
                                         <button class="btn avenir-light form-control my-4">
 

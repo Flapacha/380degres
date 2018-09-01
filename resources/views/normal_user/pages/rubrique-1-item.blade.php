@@ -102,7 +102,7 @@
                 <div class="d-inline-block w-lg-33  vertical-align-middle">
 
                     <div class="h5 author-icon avenir-light text-center">
-                        <span class="avenir-light">PAR</span>  <span class="font-weight-bold">{{ $article->author->nom }} {{ $article->author->prenoms }}</span>
+                        <span class="avenir-light">PAR</span>  <a href="{{ route("authorDetailAndArticle",["authorName"=>$article->author->nom,"authorID"=>$article->author->id]) }}" class="font-weight-bold">{{ $article->author->nom }} {{ $article->author->prenoms }}</a>
                         {{--<img src="/images/pp.jpg" class="" alt="">--}}
                     </div>
 
@@ -126,13 +126,13 @@
     <div class="container-fluid px-5">
 
 
-        <div class="col-lg-9">
+        <div class="col-lg-12">
 
-            <img src="/{{$article->headerImage->path}}" width="100%" height="400px" alt="">
+            <img src="{{$article->headerImage->path}}" width="100%" height="400px" alt="">
 
         </div>
 
-        <div class="col-lg-11 py-md-5 px-md-5 avenir-light">
+        <div class="col-lg-12 py-md-5 px-md-5 mb-md-3 avenir-light">
 
             {!! htmlspecialchars_decode($article->article_content)  !!}
 

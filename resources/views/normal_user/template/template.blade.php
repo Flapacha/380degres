@@ -30,10 +30,13 @@
                 <ul class="row">
 
                     <li class="col-md-11 col-lg-9 ">
-                        <img src="/images/logo.png" alt="Logo 380 Dégrés" class="logo py-1">
-                        <span class="logo-description">
+                        <a  class="d-md-block " href="{{ route("home") }}">
+                            <img src="/images/logo.png" alt="Logo 380 Dégrés" class="logo py-1">
+                            <span class="logo-description">
                            <span>AGENCE DE COMMUNICATION - LE BLOG</span>
-                        </span>
+                            </span>
+                        </a>
+
                     </li>
 
                     <div class="col text-right align-items-center vertical-center d-none d-lg-flex">
@@ -57,7 +60,7 @@
 
             <div></div>
             
-            <nav class="containere d-none d-lg-block ">
+            <nav class="containere d-none d-lg-block font-weight-bold  avenir-light">
 
                 <ul class="row px-1">
 
@@ -65,26 +68,25 @@
                         {{--<a href=""></a>RUBRIQUE 1--}}
                     {{--</li>--}}
 
-                    <li class="col-3 text-center font-weight-bold px-3 py-3
-">
-                        <a href="#">RUBRIQUE 1</a>
+                    <li class="col-3 text-center px-3 py-3 @if(request()->request->get("categorieID")==1)  actived background-color-380 text-white @endif">
+                        <a href="{{ route("rubrique1Home") }}">RUBRIQUE 1</a>
 
                     </li>
 
-                    <li class="col-lg text-center px-3 py-3">
+                    <li class="col-lg text-center px-3 py-3 @if(request()->request->get("categorieID")==2)  actived background-color-380 text-white @endif">
                         <a href="{{  route("rubrique2Home") }}">RUBRIQUE 2</a>
                     </li>
 
-                    <li class="col-lg text-center px-3 py-3">
+                    <li class="col-lg text-center px-3 py-3 @if(request()->request->get("categorieID")==3)  actived background-color-380 text-white @endif">
                         <a href="{{  route("rubrique3Home") }}">RUBRIQUE 3</a>
                     </li>
 
-                    <li class="col-lg text-center px-3 py-3">
+                    <li class="col-lg text-center px-3 py-3 @if(request()->request->get("categorieID")==4)  actived background-color-380 text-white @endif">
                         <a href="{{  route("rubrique4Home") }}">RUBRIQUE 4</a>
                     </li>
 
 
-                    <li class="col-lg text-center px-3 py-3">
+                    <li class="col-lg text-center px-3 py-3 @if(request()->request->get("categorieID")==5)  actived background-color-380 text-white @endif">
                         <a href="{{  route("rubrique4Home") }}">RUBRIQUE 5</a>
                     </li>
 

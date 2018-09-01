@@ -18,8 +18,17 @@ header {
         letter-spacing: 2px;
         font-size: 1.0rem;
 
+        a{
+          color: #000!important;
+        }
 
+      }
 
+      .actived{
+
+        a {
+          color: #fff !important;
+        }
       }
 
     }
