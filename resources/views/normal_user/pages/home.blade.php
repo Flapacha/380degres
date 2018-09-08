@@ -2,11 +2,47 @@
 
 @section("custom_header_content")
 
-    <div class="home-slider">
-        
+    <div class="home-slider remaining-flex-height position-relative">
+
+        <div class="title">
+
+            <div  class="w-75 m-auto position-relative px-3 py-3 text-white display-3">
+
+
+                <h1>
+
+                    L'<span class="text-color-380">ESCROQUERIE</span> DU RESEAU DE <span class="text-color-380">MARKETING</span> - ENQUETE AU COEUR DE LA <span class="text-color-380">SUPERCHERIE</span>
+
+                </h1>
+
+                <div class="bar bg-white my-3">
+
+                </div>
+
+                <div class="h5 mt-5">
+
+                    <div class="d-lg-inline-block font-weight-bold h4">
+                        Aujourd'hui
+                    </div>
+
+                    <div class=" float-right">
+
+
+
+                        par <span class="font-weight-bold h3 text-color-380">{{ $lastArticle->author->nom }}</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
         <a class="d-block" href="#">
 
             <img src="{{ $lastArticle->headerImage->path }}" width="100%" alt="">
+
 
             <div class="slider-info px-5">
 

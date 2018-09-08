@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-100">
 
 <head>
 
@@ -16,17 +16,17 @@
 
 </head>
 
-    <body>
+    <body class="h-100">
 
-        <header>
+        <header class="d-flex flex-column h-100 ">
 
-            <div class="background-color-380 text-white px-3 py-1 avenir-light text-right">
+            <div class="background-color-380 text-white px-3 py-1 avenir-light text-right flex-heigt-by-content">
 
                 suivez nous sur les reseaux !
 
             </div>
 
-            <div class="containere px-1">
+            <div class="containere px-1 flex-heigt-by-content">
                 <ul class="row">
 
                     <li class="col-md-11 col-lg-9 ">
@@ -60,7 +60,7 @@
 
             <div></div>
             
-            <nav class="containere d-none d-lg-block font-weight-bold  avenir-light">
+            <nav class="containere d-none d-lg-block font-weight-bold  avenir-light flex-heigt-by-content">
 
                 <ul class="row px-1">
 
@@ -86,9 +86,9 @@
                     </li>
 
 
-                    <li class="col-lg text-center px-3 py-3 @if(request()->request->get("categorieID")==5)  actived background-color-380 text-white @endif">
-                        <a href="{{  route("rubrique4Home") }}">RUBRIQUE 5</a>
-                    </li>
+                    {{--<li class="col-lg text-center px-3 py-3 @if(request()->request->get("categorieID")==5)  actived background-color-380 text-white @endif">--}}
+                        {{--<a href="{{  route("rubrique4Home") }}">RUBRIQUE 5</a>--}}
+                    {{--</li>--}}
 
 
 

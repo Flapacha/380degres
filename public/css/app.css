@@ -743,9 +743,54 @@ footer .lighned-color {
   margin-top: 15px;
 }
 
+.flex-heigt-by-content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.remaining-flex-height {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
 .home-slider {
   font-family: "Avenir";
   border-bottom: #ff646b solid 20px;
+  overflow: hidden;
+}
+
+.home-slider > .title {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 99;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-slider > .title > div {
+  word-wrap: break-word;
+  padding: 5rem !important;
+}
+
+.home-slider > .title > div:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000096;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  -webkit-filter: blur(50px);
+          filter: blur(50px);
 }
 
 .home-slider > a {
