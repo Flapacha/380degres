@@ -70,7 +70,7 @@
 
         <div class="row">
 
-            <div class="col-lg-12">
+            <div class="col-lg-12 d-none">
 
                 <div class="text-color-380 display-4 px-5 my-3">
                     A L'ASSAUT DU MARKETING ET DE LA COMMUNICATION
@@ -87,7 +87,11 @@
                 <div class="row">
 
 
-                        @foreach($articles as $article)
+                        @for($articleIndex;$articleIndex<count($articles);$articleIndex++)
+
+                            @php
+                                $article = $articles[$articleIndex];
+                            @endphp
 
                             <div class="col-lg-4 col-xs-12 mt-md-3 mt-3   offset-lg-1  border-dark article-preview text-center">
 
@@ -133,7 +137,7 @@
 
                             </div>
 
-                        @endforeach
+                        @endfor
 
 
                     <div class="mt-5 col-12">
@@ -204,7 +208,7 @@
 
                                     @foreach($voirAussis as $voirAussi)
 
-                                        <a href="#" class="py-3 border-bottom border-dark item">
+                                        <a href="{{ route("articleDetail",["articleID"=>$voirAussi->id,"articleTitle"=>$voirAussi->title]) }}" class="py-3 border-bottom border-dark item">
 
                                             <div class="h4 avenir-light text-color-380">
 

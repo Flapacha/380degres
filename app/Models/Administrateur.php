@@ -22,4 +22,8 @@ class Administrateur extends Model
         return $this->hasMany(\App\Models\Article::class,"author_id");
     }
 
+    public function pp(){
+        return $this->belongsTo(\App\Models\Image::class,"image_id","id");
+    }
+
 }

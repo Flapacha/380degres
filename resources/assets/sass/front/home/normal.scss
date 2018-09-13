@@ -224,7 +224,8 @@
 
     &:hover{
 
-      background: transparent;
+      //background: transparent;
+      background: $primary-color-light;
       color: #fff!important;
 
       &:hover .author{

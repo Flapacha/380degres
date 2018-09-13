@@ -32,9 +32,12 @@ Route::get('/rubrique4',"BlogController@showRubrique4Home")->name("rubrique4Home
 
 Route::get('author/{authorID}/{authorName}','BlogController@showAuthorDetailAndArticle')->name("authorDetailAndArticle");
 
-Route::get("/abonnement/succes","BlogController@showSuccessAbonnement");
+Route::get("/abonnement/succes","BlogController@showAbonnementSuccess")->name("abonnementSuccess");
 
 Route::post("/abonnement","BlogController@doAbonnement")->name('actionAbonnement');
+Route::post("/abonnement/finish","BlogController@finishAbonnement")->name('actionFinishAbonnement');
+
+//Route::post("/abonnement/choix","BlogController@showAbonnementChooseRubrique")->name('actionAbonnement');
 
 
 

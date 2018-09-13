@@ -18,7 +18,7 @@
 
     <body class="h-100">
 
-        <header class="d-flex flex-column h-100 ">
+        <header class="d-flex flex-column h-100a ">
 
             <div class="background-color-380 text-white px-3 py-1 avenir-light text-right flex-heigt-by-content">
 
@@ -106,7 +106,7 @@
 
         <footer class="px-3 py-3">
 
-            <div class="container">
+            <div class="container d-none">
 
                 <div class="row">
 
@@ -115,7 +115,7 @@
                         <div class="text-color-380 letter-spaccing-7 font-weight-bold avenir-light">AGENCE DE COMMUNICATION</div>
                     </div>
 
-                    <div class="col-9">
+                    <div class="col-9 d-none">
 
                         <div class="row">
 
@@ -195,7 +195,23 @@
                     </div>
 
                     <div class="col-5 vertical-center">
-                        <div class="footer-bar">a</div>
+                        <div class="footer-bar"></div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="text-center col-12 px-1 py-3 text-white avenir-light">
+                        Copyright 2018 © 380 DEGRES Le Blog Tous droits réservés.
+                    </div>
+
+                    <div class="float-right h3 text-white">
+
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-twitter-square "></i>
+                        <i class="fab fa-youtube facebook"></i>
+
                     </div>
 
                 </div>

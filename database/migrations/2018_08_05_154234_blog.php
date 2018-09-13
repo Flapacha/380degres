@@ -38,6 +38,14 @@ class Blog extends Migration
 
         });
 
+        Schema::create("user_abonnement_rubrique",function(Blueprint $table){
+
+            $table->increments('id');
+            $table->integer('categorie_id');
+            $table->integer('newsletter_id');
+
+        });
+
         Schema::create("article",function(Blueprint $table){
 
             $table->increments("id");

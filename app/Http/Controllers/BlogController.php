@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\AbonnementPivot;
+use App\Models\Administrateur;
 use App\Models\Article;
 use App\Models\ArticleTags;
 use App\Models\Categorie;
@@ -23,11 +25,15 @@ class BlogController extends Controller
 
         $lastArticle = Article::where("categorie_id",1)->orderBy("id","DESC")->first();
 
-        $autreArticles = Article::where([["id","!=",$lastArticle->id]])->paginate(8);
-        $rubrique4 = Article::where("categorie_id",4)->orderBy("id","DESC")->paginate(6);
+        $autreArticles = Article::where([["id","!=",$lastArticle->id]])->paginate(3);
+        $rubrique4 = Article::where("categorie_id",4)->orderBy("id","DESC")->paginate(3);
 
         $actualite = Article::where("categorie_id",2)->paginate(3);
 
+        $rubrique1Home = Article::where("categorie_id",1)->orderBy("id","DESC")->first();
+        $rubrique2Home = Article::where("categorie_id",2)->orderBy("id","DESC")->first();
+        $rubrique3Home = Article::where("categorie_id",3)->orderBy("id","DESC")->first();
+        $rubrique4Home = Article::where("categorie_id",4)->orderBy("id","DESC")->first();
 
 
         return view("normal_user.pages.home")->with(
@@ -35,7 +41,11 @@ class BlogController extends Controller
                 "lastArticle"=>$lastArticle,
                 "autreArticles"=>$autreArticles,
                 "actualites" => $actualite->items(),
-                "rubrique4"=>$rubrique4
+                "rubrique4"=>$rubrique4,
+                "rubrique1Home"=>$rubrique1Home,
+                "rubrique2Home"=>$rubrique2Home,
+                "rubrique3Home"=>$rubrique3Home,
+                "rubrique4Home"=>$rubrique4Home,
             ]
         );
     }
@@ -90,7 +100,7 @@ class BlogController extends Controller
         return $view;
     }
 
-    public function showRubrique2Home(){
+    public function showRubrique2Home(Request $request){
 
         request()->request->add(["categorieID"=>2]);
 
@@ -108,7 +118,13 @@ class BlogController extends Controller
 
         $rubrique2Articles = Article::where("categorie_id",2)->paginate(8);
 
-        $view = view("normal_user.pages.rubrique-2-home")->with(
+        if($request->page==null or $request->page==1)
+            $view = view("normal_user.pages.rubrique-2-home");
+
+        else
+            $view = view("normal_user.pages.rubrique_home_pagined");
+
+        $view = $view->with(
             [
                 "lastArticle"=>$rubrique2LastArticle,
                 "articles"=>$rubrique2Articles,
@@ -164,10 +180,13 @@ class BlogController extends Controller
         return view("normal_user.pages.tags_articles")->withTags($tags)->withTag(Tags::find($tagID))->with("otherTags",$otherTags);
     }
 
-    public function showAuthorDetailAndArticle(){
+    public function showAuthorDetailAndArticle($authorID){
 
+        $author = Administrateur::find($authorID);
 
-        return view("normal_user.pages.author_articles");
+        $articles = Article::where("author_id",$authorID)->paginate(8);
+
+        return view("normal_user.pages.author_articles")->with("author",$author)->with("articles",$articles);
     }
 
 
@@ -205,12 +224,42 @@ class BlogController extends Controller
 
     public function doAbonnement(Request $request){
 
+        //
+//        $newsletter = new NewsLetterUser();
+//        $newsletter->email = $request->email;
+//
+//        $newsletter->save();
+
+        $rubriques = Categorie::all();
+
+
+        return view("normal_user.pages.choose_abonnement_rubrique")->with(["rubriques"=>$rubriques]);
+    }
+
+    public function finishAbonnement(Request $request){
+
+        $choosedRubriques = $request->get("rubriques");
+
         $newsletter = new NewsLetterUser();
         $newsletter->email = $request->email;
 
         $newsletter->save();
 
-        return redirect()->route("newsletterInscriptionSuccess");
+
+        foreach ($choosedRubriques as $choosedRubrique){
+
+            $rubrique = Categorie::find($choosedRubrique);
+
+            $abonnementPivot = new AbonnementPivot();
+
+            $abonnementPivot->categorie_id = $rubrique->id;
+            $abonnementPivot->newsletter_id = $newsletter->id;
+
+            $abonnementPivot->save();
+
+            return redirect()->route('abonnementSuccess');
+        }
+
     }
 
 

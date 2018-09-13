@@ -114,25 +114,27 @@
 
                     @php $i=0; @endphp
 
-                    @foreach($autreArticles as $article)
-
-                    <div class="col-lg-4 col-xs-12 mt-md-3 mt-3  @if(($i%1)==0) offset-lg-1 @endif border-dark article-preview text-center">
+                    <div class="col-lg-5 col-xs-12 mt-md-3 mt-3  border-dark article-preview text-center">
 
                         <div class="box-shadow">
 
-                            <a href="/article/{{ $article->id }}/{{ $article->title }}">
+                            <a href="/article/{{ $rubrique2Home->id }}/{{ $rubrique2Home->title }}">
 
-                                <img src="{{ $article->headerImage->path  }}" width="264px" height="164px"  alt="">
+                                <img src="{{ $rubrique2Home->headerImage->path  }}" width="264px" height="164px"  alt="">
 
                                 <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
 
-                                    <div class="text-left ml-3 mb-3 px-1 py-1 h4 avenir-light text-color-380 author">
-                                        {{ $article->author->nom." ".$article->author->prenoms }}
-                                    </div>
+                                    <div class="m-auto w-75 bar my-3"></div>
+
+
+                                    <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique2Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
 
                                     <div class="m-auto w-75 bar my-3"></div>
 
-                                    <h3 class="h5 titre avenir-light mt-2">{{ $article->title }}</h3>
+
+                                    <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
+                                        {{ $rubrique2Home->author->nom." ".$rubrique2Home->author->prenoms }}
+                                    </div>
 
 
                                     <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
@@ -160,64 +162,57 @@
 
                     </div>
 
-                    @php $i++; @endphp
 
-                    @endforeach
+                    <div class="col-lg-5 offset-sm-1 col-xs-12 mt-md-3 mt-3 border-dark article-preview text-center">
+
+                        <div class="box-shadow">
+
+                            <a href="/article/{{ $rubrique3Home->id }}/{{ $rubrique3Home->title }}">
+
+                                <img src="{{ $rubrique3Home->headerImage->path  }}" width="264px" height="164px"  alt="">
+
+                                <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
+
+                                    <div class="m-auto w-75 bar my-3"></div>
 
 
-                    <div class="row col-lg-12 my-5">
+                                    <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique3Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
 
-                        <div class="col-md-12">
-
-                            <div class="px-4 py-4 bg-dark">
+                                    <div class="m-auto w-75 bar my-3"></div>
 
 
-                                <div class="h5 text-white mb-5">
-                                    ACTUALITÉS
-                                </div>
+                                    <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
+                                        {{ $rubrique3Home->author->nom." ".$rubrique3Home->author->prenoms }}
+                                    </div>
 
-                                <div class="row">
 
-                                    @foreach($actualites as $actualite)
+                                    <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
+                                        Marketing de reseau
+                                    </div>
 
-                                    <a href="{{ route("articleDetail", ["articleID"=>$actualite->id,"articleTitre"=>$actualite->title]) }}" class="col-4 mt-3 actualite-item">
+                                    <div class="">
 
-                                        <div class="article-image">
-{{--                                            <img src="{{ $actualite->headerImage->path  }}" width="100%" alt="">--}}
-                                            <img src="{{ $article->headerImage->path }}" width="100%" alt="">
-                                        </div>
+                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">Aujourd'hui à 22:30</div>
+                                    </div>
 
-                                        <div class="bg-white text-black-50 content">
 
-                                            <div class="h4 avenir-light px-3 py-3">
-                                                {{ $actualite->title }}
-                                            </div>
-
-                                            <div class="text-center h5 avenir-light px-2 py-2">
-                                                {{ $actualite->sous_title }}
-                                            </div>
-
-                                            <div class=" px-3 py-3 text-right">
-                                                par <span class="text-color-380 font-weight-bold">{{ $article->author->nom." ".$article->author->prenom }}</span>
-                                            </div>
-
-                                            <div class="avenir-light  px-3 py-3 font-weight-bold">
-                                                Le {{ $article->created_at->format("d/m/Y") }}
-                                            </div>
-
-                                        </div>
-
-                                    </a>
-
-                                    @endforeach
+                                    {{--<p>--}}
+                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                    {{--</p>--}}
 
                                 </div>
 
-                            </div>
+                            </a>
 
                         </div>
 
+
                     </div>
+
+
+
 
                     {{--<div class="row col-lg-12 r-4">--}}
 
@@ -292,6 +287,56 @@
 
                 <div class="row">
 
+                    <div class="col-12 col-xs-12 mb-sm-3 border-dark article-preview text-center">
+
+                        <div class="box-shadow">
+
+                            <a href="/article/{{ $rubrique4Home->id }}/{{ $rubrique4Home->title }}">
+
+                                <img src="{{ $rubrique4Home->headerImage->path  }}" width="264px" height="164px"  alt="">
+
+                                <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
+
+                                    <div class="m-auto w-75 bar my-3"></div>
+
+
+                                    <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique4Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
+
+                                    <div class="m-auto w-75 bar my-3"></div>
+
+
+                                    <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
+                                        {{ $rubrique4Home->author->nom." ".$rubrique4Home->author->prenoms }}
+                                    </div>
+
+
+                                    <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
+                                        Marketing de reseau
+                                    </div>
+
+                                    <div class="">
+
+                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">Aujourd'hui à 22:30</div>
+                                    </div>
+
+
+                                    {{--<p>--}}
+                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                    {{--</p>--}}
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+
+
                     <div class="col-12 o-rubrique">
 
                         <div class="head text-center px-3 py-3">
@@ -321,38 +366,6 @@
                         </div>
 
                     </div>
-
-                    <form method="post" action="{{ route('actionAbonnement') }}" class="col-12 left-abonnement box-shadow mt-4 d-md-none d-lg-block">
-
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-
-                        <div>
-
-                            <div class="head text-center px-3 py-3 mt-3 avenir-light">
-                                ABONNEMENT
-                            </div>
-
-                            <div class="content px-3 py-3">
-
-                                <form action="#" class="form-group">
-
-                                    <label for="" class="text-center text-white font-weight-bold">ABONNEZ VOUS A NOTRE NEWSLETTER</label>
-                                    <input type="text" class="form-control" datatype="email" placeholder="adresse@email.com" name="email">
-
-                                    <button class="btn avenir-light form-control my-4">
-
-                                        <span>S'ABONNER</span>
-                                        <i class="glyph-icon glyphicon-save"></i>
-
-                                    </button>
-
-                                </form>
-
-                            </div>
-
-                        </div>
-
-                    </form>
 
                 </div>
 

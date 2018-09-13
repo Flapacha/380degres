@@ -1,6 +1,6 @@
 
 .avenir-light{
-  font-family: "AvenirLight"!important;
+  font-family: "Century Gothic"!important;
 }
 
 .font-roboto-mono{
@@ -63,6 +63,39 @@
   border-radius: 3px
 }
 
+.pagination{
+
+  border:  solid #b9b9b9 1px;
+  font-family: $avenir-font;
+
+  li{
+
+      display: inline-block;
+      padding: 15px;
+      background: $primary-color-light;
+      color: #fff;
+
+      a{
+        color: #fff;
+      }
+
+  }
+
+  .active{
+
+    color: $primary-color-light;
+    background: #fff;
+    font-weight: bold;
+
+  }
+
+  .disabled{
+
+
+  }
+
+}
+
 .radius-2{
   border-radius: 6px
 }
@@ -109,9 +142,15 @@
 
   @for $i from 1 to 100 {
 
+
+    .m-left-lg-#{$i} {
+      margin-left: 1% * $i !important;
+    }
+
     .w-lg-#{$i} {
       width: 1% * $i !important;
     }
+
 
   }
 

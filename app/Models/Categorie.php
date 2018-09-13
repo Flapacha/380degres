@@ -17,4 +17,15 @@ class Categorie extends Model
     protected $table="categorie";
     public $timestamps=false;
 
+    public function newsletterUser(){
+
+        return $this->belongsToMany(
+            \App\Models\NewsLetterUser::class,
+                "user_abonnement_rubrique",
+            "categorie_id",
+            "newsletter_id"
+            );
+
+    }
+
 }

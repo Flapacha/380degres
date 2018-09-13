@@ -16,4 +16,5 @@ class NewsLetterUser extends Model
 
     protected $table="newsletter_user";
 
+
 }
