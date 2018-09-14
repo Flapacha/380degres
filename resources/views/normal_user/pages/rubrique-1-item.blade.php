@@ -2,11 +2,12 @@
 
 @section("custom_head")
 
-    <meta property="og:url"  content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:url"  content="{{ url('/') }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title"  content="380 Degrés Blog - {{$article->title}}" />
     <meta property="og:description"   content="{{$article->sous_title}}" />
-    <meta property="og:image"         content="{{ $article->headerImage->path }}" />
+    <meta property="og:image"         content="{{url('/').$article->headerImage->path }}" />
+    <title>380 Degrés - {{ $article->title }}</title>
 
 @endsection
 
@@ -69,7 +70,7 @@
                                 {{--<i class="fab fa-google-plus-g"></i>--}}
                             {{--</span>--}}
 
-                            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                            <div class="fb-like" data-href="https://www.google.fr" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
                             <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">
                                 Tweet <i class="mdi mdi-check"></i>
@@ -154,7 +155,7 @@
 
                 @foreach($voirAussis as $voirAussi)
 
-                    <div class=" col-6 row my-3">
+                    <a href="{{ route("articleDetail",["articleID"=>$article->id,"articleTitle"=>$article->title]) }}" class=" col-6 row my-3">
 
                         <div class="col-6">
 
@@ -164,7 +165,7 @@
 
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-4 background-color-380 text-white">
 
                             <div class="text-center px-4 py-4 display-3">
                                 {{ $article->title }}
@@ -174,9 +175,13 @@
                                 {{ $article->sous_title }}
                             </div>
 
+                            <div class="font-weight-bold text-right avenir-light py-2">
+                                {{ $article->created_at->format("d/m/Y") }}
+                            </div>
+
                         </div>
 
-                    </div>
+                    </a>
 
                 @endforeach
 
@@ -185,7 +190,15 @@
 
         <div>
 
-            <div>
+            <div class="text-center my-5">
+
+                <div class="display-4 text-left">
+                    COMMENTAIRES
+                </div>
+
+                <div class="bar my-4">
+
+                </div>
 
                 <div id="fb-root"></div>
                 <script>(function(d, s, id) {
@@ -197,7 +210,7 @@
                     }(document, 'script', 'facebook-jssdk'));</script>
 
 
-                <div class="fb-comments" data-href="https://blog.380degre.com/{{ route("articleDetail",["articleID"=>$article->id,"articleTitle"=>$article->title]) }}" data-numposts="9"></div>
+                <div class="fb-comments m-auto" data-href="https://blog.380degre.com/{{ route("articleDetail",["articleID"=>$article->id,"articleTitle"=>$article->title]) }}" data-numposts="9"></div>
             </div>
         </div>
 

@@ -69,7 +69,7 @@ class BlogController extends Controller
         return view("normal_user.pages.success_abonnement");
     }
 
-    public function showRubrique1Home(){
+    public function showRubrique1Home(Request $request){
 
         request()->request->add(["categorieID"=>1]);
 
@@ -86,7 +86,14 @@ class BlogController extends Controller
 
         $rubrique2Articles = Article::where("categorie_id",1)->paginate(8);
 
-        $view = view("normal_user.pages.rubrique-2-home")->with(
+        if($request->page==null or $request->page==1)
+            $view = view("normal_user.pages.rubrique-2-home");
+
+        else
+            $view = view("normal_user.pages.rubrique_home_pagined");
+
+
+        $view->with(
             [
                 "lastArticle"=>$rubrique2LastArticle,
                 "articles"=>$rubrique2Articles,
@@ -138,7 +145,7 @@ class BlogController extends Controller
         return $view;
     }
 
-    public function showRubrique3Home(){
+    public function showRubrique3Home(Request $request){
 
         request()->request->add(["categorieID"=>3]);
 
@@ -156,7 +163,14 @@ class BlogController extends Controller
 
         $rubrique2Articles = Article::where("categorie_id",3)->paginate(8);
 
-        $view = view("normal_user.pages.rubrique-2-home")->with(
+        if($request->page==null or $request->page==1)
+            $view = view("normal_user.pages.rubrique-2-home");
+
+        else
+            $view = view("normal_user.pages.rubrique_home_pagined");
+
+
+        $view = $view->with(
             [
                 "lastArticle"=>$rubrique2LastArticle,
                 "articles"=>$rubrique2Articles,
@@ -190,7 +204,7 @@ class BlogController extends Controller
     }
 
 
-    public function showRubrique4Home(){
+    public function showRubrique4Home(Request $request){
 
         request()->request->add(["categorieID"=>4]);
 
@@ -208,7 +222,13 @@ class BlogController extends Controller
 
         $rubrique2Articles = Article::where("categorie_id",4)->paginate(8);
 
-        $view = view("normal_user.pages.rubrique-2-home")->with(
+        if($request->page==null or $request->page==1)
+            $view = view("normal_user.pages.rubrique-2-home");
+
+        else
+            $view = view("normal_user.pages.rubrique_home_pagined");
+
+        $view = $view->with(
             [
                 "lastArticle"=>$rubrique2LastArticle,
                 "articles"=>$rubrique2Articles,

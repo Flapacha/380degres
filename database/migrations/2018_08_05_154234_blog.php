@@ -26,13 +26,13 @@ class Blog extends Migration
 
         });
 
-        Schema::create("newsletter_user",function(Blueprint $table){
+        Schema::create("newsletter_user", function(Blueprint $table){
 
             $table->increments("id");
             $table->string("email");
 
-            $table->string("nom");
-            $table->string("prenoms");
+            $table->string("nom")->nullable();
+            $table->string("prenoms")->nullable();
 
             $table->timestamps();
 

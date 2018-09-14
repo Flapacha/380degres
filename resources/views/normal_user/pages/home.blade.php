@@ -1,4 +1,4 @@
-@extends("normal_user.template.template")
+@extends("normal_user.template.template_2")
 
 @section("custom_header_content")
 
