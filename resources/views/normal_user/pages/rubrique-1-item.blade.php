@@ -3,10 +3,13 @@
 @section("custom_head")
 
     <meta property="og:url"  content="{{ url('/') }}" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:title"  content="380 Degrés Blog - {{$article->title}}" />
     <meta property="og:description"   content="{{$article->sous_title}}" />
-    <meta property="og:image"         content="{{url('/').$article->headerImage->path }}" />
+    <meta property="og:image"         content="{{ $article->sous_title }}" />
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+
     <title>380 Degrés - {{ $article->title }}</title>
 
 @endsection
