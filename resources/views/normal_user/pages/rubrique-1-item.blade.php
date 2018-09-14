@@ -2,7 +2,7 @@
 
 @section("custom_head")
 
-    <meta property="og:url"  content="{{ url('/') }}" />
+    <meta property="og:url"  content="{{ Request::url() }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title"  content="380 Degrés Blog - {{$article->title}}" />
     <meta property="og:description"   content="{{$article->sous_title}}" />
