@@ -50,7 +50,7 @@ class BlogController extends Controller
         );
     }
 
-    public function showArticle($articleID,$articleTitle){
+    public function showArticle($articleID){
 
         $article = Article::find($articleID);
 

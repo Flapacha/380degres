@@ -18,7 +18,8 @@
 //Route::get('/home', "BlogController@showHome");
 Route::get('/', "BlogController@showHome")->name("home");
 
-Route::get('/article/{articleID}/{articleTitle}', "BlogController@showArticle")->name("articleDetail");
+//Route::get('/article/{articleID}/{articleTitle}', "BlogController@showArticle")->name("articleDetail");
+Route::get('/article/{articleID}/', "BlogController@showArticle")->name("articleDetail");
 
 Route::get('/test', "BlogController@showHome");
 

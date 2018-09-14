@@ -118,7 +118,7 @@
 
                         <div class="box-shadow">
 
-                            <a href="/article/{{ $rubrique2Home->id }}/{{ $rubrique2Home->title }}">
+                            <a href="{{ route("articleDetail",["articleID"=>$rubrique2Home->id]) }}">
 
                                 <img src="{{ $rubrique2Home->headerImage->path  }}" width="264px" height="164px"  alt="">
 
@@ -167,7 +167,7 @@
 
                         <div class="box-shadow">
 
-                            <a href="/article/{{ $rubrique3Home->id }}/{{ $rubrique3Home->title }}">
+                            <a href="{{ route("articleDetail",["articleID"=>$rubrique3Home->id]) }}">
 
                                 <img src="{{ $rubrique3Home->headerImage->path  }}" width="264px" height="164px"  alt="">
 
@@ -291,7 +291,7 @@
 
                         <div class="box-shadow">
 
-                            <a href="/article/{{ $rubrique4Home->id }}/{{ $rubrique4Home->title }}">
+                            <a href="{{ route("articleDetail",["articleID"=>$rubrique4Home->id]) }}">
 
                                 <img src="{{ $rubrique4Home->headerImage->path  }}" width="264px" height="164px"  alt="">
 
@@ -347,7 +347,7 @@
 
                             @foreach($rubrique4 as $r4)
 
-                            <a href="#" class="py-3 border-bottom border-dark item">
+                            <a href="{{ route("articleDetail",["articleID"=>$r4->id]) }}" class="py-3 border-bottom border-dark item">
 
                                     <div class="h4 avenir-light text-color-380">
                                         {{--{{ $r4->title  }}--}}
