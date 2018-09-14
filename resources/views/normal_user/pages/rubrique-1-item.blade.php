@@ -6,7 +6,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:title"  content="380 Degrés Blog - {{$article->title}}" />
     <meta property="og:description"   content="{{$article->sous_title}}" />
-    <meta property="og:image"         content="{{ $article->sous_title }}" />
+    <meta property="og:image"         content="{{ Request::url().$article->headerImage->path }}" />
     <meta property="og:image:width" content="200">
     <meta property="og:image:height" content="200">
 
