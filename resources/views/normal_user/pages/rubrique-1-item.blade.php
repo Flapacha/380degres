@@ -70,7 +70,7 @@
                                 {{--<i class="fab fa-google-plus-g"></i>--}}
                             {{--</span>--}}
 
-                            <div class="fb-like" data-href="https://www.google.fr" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                            <div class="fb-like" data-href="{{ Request::url() }}" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
                             <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">
                                 Tweet <i class="mdi mdi-check"></i>
