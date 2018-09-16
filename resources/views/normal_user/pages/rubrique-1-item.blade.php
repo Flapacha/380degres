@@ -132,7 +132,7 @@
 
         <div class="col-lg-12">
 
-            <img src="{{$article->headerImage->path}}" width="100%" height="400px" alt="">
+            <img src="/{{$article->headerImage->path}}" width="100%" height="400px" alt="">
 
         </div>
 
@@ -163,18 +163,18 @@
                         <div class="col-6">
 
                             <div>
-                                <img src="{{ $article->headerImage->path }}" width="100%" alt="">
+                                <img src="/{{ $article->headerImage->path }}" width="100%" alt="">
                             </div>
 
                         </div>
 
-                        <div class="col-4 background-color-380 text-white">
+                        <div class="col-4 background-color-380 text-white avenir-light">
 
-                            <div class="text-center px-4 py-4 display-3">
+                            <div class="text-center px-4 py-4 h5">
                                 {{ $article->title }}
                             </div>
 
-                            <div class="text-center px-4 py-4 h5">
+                            <div class="text-center px-4 py-4">
                                 {{ $article->sous_title }}
                             </div>
 

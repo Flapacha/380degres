@@ -38,9 +38,22 @@ class Article extends Model
 
             $related = ArticleTags::where("tag_id",$item->tag_id)->paginate(15);
 
+
             $relatedArticle[] = $related->items()[0]->article;
 
         });
+
+        if(count($tags)==0 or count($relatedArticle)==0){
+
+            $articles = Article::where("categorie_id",$this->categorie_id)->where("id","!=",$this->id)->paginate(2);
+
+            $articles->each(function($item) use(&$relatedArticle) {
+
+                $relatedArticle[] = $item;
+
+            });
+
+        }
 
         return $relatedArticle;
     }
