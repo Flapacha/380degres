@@ -11,7 +11,9 @@
 
                 <h1>
 
-                    L'<span class="text-color-380">ESCROQUERIE</span> DU RESEAU DE <span class="text-color-380">MARKETING</span> - ENQUETE AU COEUR DE LA <span class="text-color-380">SUPERCHERIE</span>
+                    {{--L'<span class="text-color-380">ESCROQUERIE</span> DU RESEAU DE <span class="text-color-380">MARKETING</span> - ENQUETE AU COEUR DE LA <span class="text-color-380">SUPERCHERIE</span>--}}
+
+                    {{ $lastArticle->title }}
 
                 </h1>
 
@@ -22,7 +24,7 @@
                 <div class="h5 mt-5">
 
                     <div class="d-lg-inline-block font-weight-bold h4">
-                        Aujourd'hui
+                        {{ $lastArticle->created_at->format("d/m/Y") }}
                     </div>
 
                     <div class=" float-right">
@@ -41,7 +43,7 @@
 
         <a class="d-block" href="#">
 
-            <img src="{{ $lastArticle->headerImage->path }}" width="100%" alt="">
+            <img src="/{{ $lastArticle->headerImage->path }}" width="100%" alt="">
 
 
             <div class="slider-info px-5">
@@ -143,7 +145,7 @@
 
                                     <div class="">
 
-                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">Aujourd'hui à 22:30</div>
+                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique2Home->created_at->format("d/m/Y à h:m")  }}</div>
                                     </div>
 
 
@@ -192,7 +194,7 @@
 
                                     <div class="">
 
-                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">Aujourd'hui à 22:30</div>
+                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique3Home->created_at->format("d/m/Y à h:m")  }}</div>
                                     </div>
 
 
@@ -316,7 +318,7 @@
 
                                     <div class="">
 
-                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">Aujourd'hui à 22:30</div>
+                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique4Home->created_at->format("d/m/Y à h:m")  }}</div>
                                     </div>
 
 

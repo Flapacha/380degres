@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\NewsletterMail;
 use App\Models\AbonnementPivot;
 use App\Models\Administrateur;
 use App\Models\Article;
@@ -17,6 +18,7 @@ use App\Models\Categorie;
 use App\Models\NewsLetterUser;
 use App\Models\Tags;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class BlogController extends Controller
 {
@@ -64,6 +66,7 @@ class BlogController extends Controller
             ]
         );
     }
+
 
     public function showAbonnementSuccess(){
         return view("normal_user.pages.success_abonnement");

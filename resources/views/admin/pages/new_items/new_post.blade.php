@@ -5,6 +5,8 @@
 
     <form method="post" action="@if(!$edit) {{ route("actionNewArticle") }} @endif @if($edit) {{ route("actionEditArticle",["articleID"=>$article->id]) }} @endif" class="container" enctype="multipart/form-data" >
 
+        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+
         <div class="row">
 
             <div class="col-12">

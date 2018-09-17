@@ -26,7 +26,25 @@ class AdminActionController extends Controller
 
         $article->save();
 
+        $this->sendNewsletterMail($article);
+
         return redirect()->route("adminPostList",["page"=>1]);
+    }
+
+    public function sendNewsletterMail(Article $article){
+
+        $categorie = $article->categorie;
+
+        $categorie->newsletterUser->each(function($item) use ($article) {
+
+            dump($item);
+
+            $mail = new NewsletterMail($article,$item);
+
+            Mail::to($item->email)->send($mail);
+
+        });
+
     }
 
     public function editArticle(Request $request,$articleID){
