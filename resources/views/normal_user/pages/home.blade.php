@@ -385,7 +385,7 @@
 
 
             <p class="font-roboto-mono w-100 d-block text-center text-white">
-                Abonnez nous a notre newsletter et restez informez de nos dernieres actualités & articles
+                Abonnez vous à notre newsletter et recevez vos articles préférés dès leurs publications
             </p>
 
             <div class="col-12">

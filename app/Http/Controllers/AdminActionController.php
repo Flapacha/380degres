@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewsletterMail;
 use App\Models\Administrateur;
 use App\Models\Article;
 use App\Models\Image;
