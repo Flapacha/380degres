@@ -15,7 +15,7 @@
 
             </div>
 
-            <div class="col-lg-6 offset-lg-1">
+            <a href="{{ route("articleDetail",["articleID"=>$rubrique2[0]->id,"articleTitle"=>$rubrique2[0]->title])  }}" class="col-lg-6 offset-lg-1">
 
                 <div>
 
@@ -23,9 +23,13 @@
 
                 </div>
 
-                <div class="px-4 py-4">
+                <div class="px-4 py-4 background-color-380 text-white mb-3">
 
-                    <div class="avenir-light h4">
+                    <div class="display-4">
+                        {{ $rubrique2[0]->title }}
+                    </div>
+
+                    <div class="avenir-light h4 px-5 ">
 
 {{--                        {{ $lastArticle->title }}--}}
                     {{ $rubrique2[0]->sous_title }}
@@ -35,7 +39,7 @@
                 </div>
 
 
-            </div>
+            </a>
 
             @php $articleIndex++;$finalIndex=$articleIndex+3; @endphp
 

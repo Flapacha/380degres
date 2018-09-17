@@ -211,7 +211,7 @@
                                                                 <table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:separate;" align="center" border="0">
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td style="border:none;border-radius:24px;color:#FF0000;cursor:auto;padding:10px 25px;" align="center" valign="middle" bgcolor="#FFD9D1"><a href="{{ url("/")."".route("articleDetail",["articleID"=>$article->id]) }}" style="text-decoration:none;background:#FFD9D1;color:#FF0000;font-family:Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;text-transform:none;margin:0px;" target="_blank">CLIQUEZ ICI POUR VOIR L&apos;ARTICLE</a></td>
+                                                                            <td style="border:none;border-radius:24px;color:#FF0000;cursor:auto;padding:10px 25px;" align="center" valign="middle" bgcolor="#FFD9D1"><a href="{{ route("articleDetail",["articleID"=>$article->id]) }}" style="text-decoration:none;background:#FFD9D1;color:#FF0000;font-family:Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;text-transform:none;margin:0px;" target="_blank">CLIQUEZ ICI POUR VOIR L&apos;ARTICLE</a></td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>

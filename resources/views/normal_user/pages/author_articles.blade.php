@@ -14,7 +14,7 @@
 
                     <div>
 
-                        <img class="btn-icons btn-rounded" width="100%" src="{{ $author->pp->path }}"/>
+                        <img class="btn-icons btn-rounded" width="100%" src="/{{ $author->pp->path }}"/>
 
                     </div>
 
@@ -27,7 +27,7 @@
 
                     <div class="mce-i-pagebreak">
 
-                        momomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeaze
+                        {{--momomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeaze--}}
 
                     </div>
 

@@ -202,11 +202,13 @@
 
                 <div class="row">
 
-                    <div class="text-center col-12 px-1 py-3 text-white avenir-light">
+                    <div class="text-center col-6 offset-lg-3 px-1 py-3 text-white avenir-light">
                         Copyright 2018 © 380 DEGRES Le Blog Tous droits réservés.
+
                     </div>
 
-                    <div class="float-right h3 text-white">
+
+                    <div class="col-3 h3 text-white text-right  ">
 
                         <i class="fab fa-facebook-square"></i>
                         <i class="fab fa-twitter-square "></i>

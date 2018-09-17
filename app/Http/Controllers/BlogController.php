@@ -285,6 +285,18 @@ class BlogController extends Controller
 
     }
 
+    public function desabonnement(Request $request){
+
+        $userID = $request->id;
+
+        $userAbonnement = AbonnementPivot::where("newsletter_id",$userID)->first();
+
+        if($userAbonnement!=null)
+            $userAbonnement->delete();
+
+        return view("normal_user.pages.desabonnement-user");
+    }
+
 
 
 

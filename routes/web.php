@@ -38,6 +38,8 @@ Route::get("/abonnement/succes","BlogController@showAbonnementSuccess")->name("a
 Route::post("/abonnement","BlogController@doAbonnement")->name('actionAbonnement');
 Route::post("/abonnement/finish","BlogController@finishAbonnement")->name('actionFinishAbonnement');
 
+Route::get("/desabonnement","BlogController@desabonnement")->name("desabonnement");
+
 //Route::post("/abonnement/choix","BlogController@showAbonnementChooseRubrique")->name('actionAbonnement');
 
 
