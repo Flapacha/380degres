@@ -8,6 +8,7 @@ use App\Models\Article;
 use App\Models\Image;
 use App\Models\NewsLetterUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AdminActionController extends Controller
 {
