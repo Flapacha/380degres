@@ -6,7 +6,7 @@
 
         <div class="title">
 
-            <div  class="w-75 m-auto position-relative px-3 py-3 text-white display-3">
+            <a href="{{ route("articleDetail",["articleID"=>$lastArticle->id]) }}"  class="w-75 m-auto position-relative px-3 py-3 text-white display-3">
 
 
                 <h1>
@@ -36,7 +36,7 @@
 
                 </div>
 
-            </div>
+            </a>
 
 
         </div>
@@ -112,264 +112,279 @@
 
                 </div>
 
+            </div>
+
+            <div class="col-lg-12 col-12">
+
                 <div class="row">
 
-                    @php $i=0; @endphp
+                    <div class="col-lg-9">
 
-                    <div class="col-lg-5 col-xs-12 mt-md-3 mt-3  border-dark article-preview text-center">
+                        <div class="row">
 
-                        <div class="box-shadow">
+                            @php $i=0; @endphp
 
-                            <a href="{{ route("articleDetail",["articleID"=>$rubrique2Home->id]) }}">
+                            <div class="col-lg-5 col-xs-12 mt-md-3 mt-3  border-dark article-preview text-center">
 
-                                <img src="{{ $rubrique2Home->headerImage->path  }}" width="264px" height="164px"  alt="">
+                                <div class="box-shadow">
 
-                                <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
+                                    <a href="{{ route("articleDetail",["articleID"=>$rubrique2Home->id]) }}">
 
-                                    <div class="m-auto w-75 bar my-3"></div>
+                                        <img src="{{ $rubrique2Home->headerImage->path  }}" width="264px" height="164px"  alt="">
 
+                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
 
-                                    <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique2Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
-
-                                    <div class="m-auto w-75 bar my-3"></div>
-
-
-                                    <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
-                                        {{ $rubrique2Home->author->nom." ".$rubrique2Home->author->prenoms }}
-                                    </div>
+                                            <div class="m-auto w-75 bar my-3"></div>
 
 
-                                    <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
-                                        Marketing de reseau
-                                    </div>
+                                            <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique2Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
 
-                                    <div class="">
-
-                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique2Home->created_at->format("d/m/Y à h:m")  }}</div>
-                                    </div>
+                                            <div class="m-auto w-75 bar my-3"></div>
 
 
-                                    {{--<p>--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--</p>--}}
-
-                                </div>
-
-                            </a>
-
-                        </div>
+                                            <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
+                                                {{ $rubrique2Home->author->nom." ".$rubrique2Home->author->prenoms }}
+                                            </div>
 
 
-                    </div>
+                                            <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
+                                                Marketing de reseau
+                                            </div>
+
+                                            <div class="">
+
+                                                <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique2Home->created_at->format("d/m/Y à h:m")  }}</div>
+                                            </div>
 
 
-                    <div class="col-lg-5 offset-sm-1 col-xs-12 mt-md-3 mt-3 border-dark article-preview text-center">
+                                            {{--<p>--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--</p>--}}
 
-                        <div class="box-shadow">
+                                        </div>
 
-                            <a href="{{ route("articleDetail",["articleID"=>$rubrique3Home->id]) }}">
-
-                                <img src="{{ $rubrique3Home->headerImage->path  }}" width="264px" height="164px"  alt="">
-
-                                <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
-
-                                    <div class="m-auto w-75 bar my-3"></div>
-
-
-                                    <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique3Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
-
-                                    <div class="m-auto w-75 bar my-3"></div>
-
-
-                                    <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
-                                        {{ $rubrique3Home->author->nom." ".$rubrique3Home->author->prenoms }}
-                                    </div>
-
-
-                                    <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
-                                        Marketing de reseau
-                                    </div>
-
-                                    <div class="">
-
-                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique3Home->created_at->format("d/m/Y à h:m")  }}</div>
-                                    </div>
-
-
-                                    {{--<p>--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--</p>--}}
+                                    </a>
 
                                 </div>
 
-                            </a>
 
-                        </div>
-
-
-                    </div>
+                            </div>
 
 
+                            <div class="col-lg-5 offset-sm-1 col-xs-12 mt-md-3 mt-3 border-dark article-preview text-center">
+
+                                <div class="box-shadow">
+
+                                    <a href="{{ route("articleDetail",["articleID"=>$rubrique3Home->id]) }}">
+
+                                        <img src="{{ $rubrique3Home->headerImage->path  }}" width="264px" height="164px"  alt="">
+
+                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
+
+                                            <div class="m-auto w-75 bar my-3"></div>
 
 
-                    {{--<div class="row col-lg-12 r-4">--}}
+                                            <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique3Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
 
-                        {{--<div class="col-lg-12 header">--}}
+                                            <div class="m-auto w-75 bar my-3"></div>
+
+
+                                            <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
+                                                {{ $rubrique3Home->author->nom." ".$rubrique3Home->author->prenoms }}
+                                            </div>
+
+
+                                            <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
+                                                Marketing de reseau
+                                            </div>
+
+                                            <div class="">
+
+                                                <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique3Home->created_at->format("d/m/Y à h:m")  }}</div>
+                                            </div>
+
+
+                                            {{--<p>--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--</p>--}}
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            {{--<div class="row col-lg-12 r-4">--}}
+
+                            {{--<div class="col-lg-12 header">--}}
 
                             {{--<div class="px-4 py-4 text-white font-weight-bold">--}}
-                                {{--VOIR AUSSI--}}
+                            {{--VOIR AUSSI--}}
                             {{--</div>--}}
 
                             {{--<div class="card">--}}
 
-                                {{--<div class="card-body">--}}
+                            {{--<div class="card-body">--}}
 
-                                    {{--<div class="row">--}}
+                            {{--<div class="row">--}}
 
-                                        {{--@for($i=0;$i<3;$i++)--}}
+                            {{--@for($i=0;$i<3;$i++)--}}
 
-                                         {{--<div class="col-12">--}}
+                            {{--<div class="col-12">--}}
 
-                                            {{--<div>--}}
-                                                {{--titre de l'actualité--}}
-                                            {{--</div>--}}
+                            {{--<div>--}}
+                            {{--titre de l'actualité--}}
+                            {{--</div>--}}
 
-                                            {{--<div class="row">--}}
+                            {{--<div class="row">--}}
 
-                                                {{--<div class="col-2">--}}
+                            {{--<div class="col-2">--}}
 
-                                                    {{--<img src="/images/dogba.jpg" class="w-100" alt="">--}}
+                            {{--<img src="/images/dogba.jpg" class="w-100" alt="">--}}
 
-                                                {{--</div>--}}
+                            {{--</div>--}}
 
-                                                {{--<div class="col-10">--}}
+                            {{--<div class="col-10">--}}
 
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
-                                                    {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
+                            {{--PATITE DESCRIPTION DE L'ARTISTE QUI SUIT--}}
 
-                                                {{--</div>--}}
+                            {{--</div>--}}
 
-                                            {{--</div>--}}
+                            {{--</div>--}}
 
-                                        {{--</div>--}}
+                            {{--</div>--}}
 
-                                            {{--<div class="bar w-100 mx-4 my-4"></div>--}}
+                            {{--<div class="bar w-100 mx-4 my-4"></div>--}}
 
-                                        {{--@endfor--}}
+                            {{--@endfor--}}
 
-                                    {{--</div>--}}
+                            {{--</div>--}}
 
-                                {{--</div>--}}
+                            {{--</div>--}}
 
                             {{--</div>--}}
 
 
-                        {{--</div>--}}
+                            {{--</div>--}}
 
 
-                    {{--</div>--}}
+                            {{--</div>--}}
 
 
-                </div>
-
-            </div>
-
-            <div class="col-lg-3 col-12">
-
-                <div class="row">
-
-                    <div class="col-12 col-xs-12 mb-sm-3 border-dark article-preview text-center">
-
-                        <div class="box-shadow">
-
-                            <a href="{{ route("articleDetail",["articleID"=>$rubrique4Home->id]) }}">
-
-                                <img src="{{ $rubrique4Home->headerImage->path  }}" width="264px" height="164px"  alt="">
-
-                                <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
-
-                                    <div class="m-auto w-75 bar my-3"></div>
+                        </div>
 
 
-                                    <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique4Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
 
-                                    <div class="m-auto w-75 bar my-3"></div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="row">
+
+                            <div class="col-12 col-xs-12 mb-sm-3 border-dark article-preview text-center">
+
+                                <div class="box-shadow">
+
+                                    <a href="{{ route("articleDetail",["articleID"=>$rubrique4Home->id]) }}">
+
+                                        <img src="{{ $rubrique4Home->headerImage->path  }}" width="264px" height="164px"  alt="">
+
+                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
+
+                                            <div class="m-auto w-75 bar my-3"></div>
 
 
-                                    <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
-                                        {{ $rubrique4Home->author->nom." ".$rubrique4Home->author->prenoms }}
-                                    </div>
+                                            <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique4Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
+
+                                            <div class="m-auto w-75 bar my-3"></div>
 
 
-                                    <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
-                                        Marketing de reseau
-                                    </div>
-
-                                    <div class="">
-
-                                        <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique4Home->created_at->format("d/m/Y à h:m")  }}</div>
-                                    </div>
+                                            <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
+                                                {{ $rubrique4Home->author->nom." ".$rubrique4Home->author->prenoms }}
+                                            </div>
 
 
-                                    {{--<p>--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                    {{--</p>--}}
+                                            <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
+                                                Marketing de reseau
+                                            </div>
+
+                                            <div class="">
+
+                                                <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique4Home->created_at->format("d/m/Y à h:m")  }}</div>
+                                            </div>
+
+
+                                            {{--<p>--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--</p>--}}
+
+                                        </div>
+
+                                    </a>
 
                                 </div>
 
-                            </a>
 
-                        </div>
-
-
-                    </div>
+                            </div>
 
 
 
-                    <div class="col-12 o-rubrique">
+                            <div class="col-12 o-rubrique">
 
-                        <div class="head text-center px-3 py-3">
-                            VOIR AUSSI
-                        </div>
+                                <div class="head text-center px-3 py-3">
+                                    VOIR AUSSI
+                                </div>
 
-                        <div class="content px-3 py-3">
+                                <div class="content px-3 py-3">
 
-                            @foreach($rubrique4 as $r4)
+                                    @foreach($rubrique4 as $r4)
 
-                            <a href="{{ route("articleDetail",["articleID"=>$r4->id]) }}" class="py-3 border-bottom border-dark item">
+                                        <a href="{{ route("articleDetail",["articleID"=>$r4->id]) }}" class="py-3 border-bottom border-dark item">
 
-                                    <div class="h4 avenir-light text-color-380">
-                                        {{--{{ $r4->title  }}--}}
-                                        {{ $r4->title }}
-                                    </div>
+                                            <div class="h4 avenir-light text-color-380">
+                                                {{--{{ $r4->title  }}--}}
+                                                {{ $r4->title }}
+                                            </div>
 
-                                    <div class="avenir-light mini-description">
-                                        {{--{{ $r4->sous_title  }}--}}
-                                        {!! $r4->sous_title !!}
-                                    </div>
+                                            <div class="avenir-light mini-description">
+                                                {{--{{ $r4->sous_title  }}--}}
+                                                {!! $r4->sous_title !!}
+                                            </div>
 
-                                </a>
+                                        </a>
 
-                            @endforeach
+                                    @endforeach
+
+                                </div>
+
+                            </div>
 
                         </div>
 
                     </div>
 
                 </div>
+
+
 
             </div>
 
