@@ -106,7 +106,7 @@
                 <div class="d-inline-block w-lg-33  vertical-align-middle">
 
                     <div class="h5 author-icon avenir-light text-center">
-                        <span class="avenir-light">PAR</span>  <a href="{{ route("authorDetailAndArticle",["authorName"=>$article->author->nom,"authorID"=>$article->author->id]) }}" class="font-weight-bold">{{ $article->author->nom }} {{ $article->author->prenoms }}</a>
+                        <span class="avenir-light">PAR</span>  <a target="_blank" href="{{ route("authorDetailAndArticle",["authorName"=>$article->author->nom,"authorID"=>$article->author->id]) }}" class="font-weight-bold">{{ $article->author->nom }} {{ $article->author->prenoms }}</a>
                         {{--<img src="/images/pp.jpg" class="" alt="">--}}
                     </div>
 

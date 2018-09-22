@@ -51,4 +51,9 @@ class AdminViewController extends Controller
         return view("admin.pages.list_items.post_items")->withArticles($article);
     }
 
+    public function showEditAdminInfo(){
+
+        return view("admin.pages.edit_items.mes_informations")->with("admin",request("admin"));
+    }
+
 }

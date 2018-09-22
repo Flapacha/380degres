@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Administrateur;
 use Closure;
 
 class AdminMiddleware
@@ -18,11 +19,16 @@ class AdminMiddleware
 
         $adminID = session("admin",-1);
 
-        dump($adminID);
+        $adminID = 1;
 
-        if($adminID==-1)
+        if($adminID!=-1) {
+
+            $admin = Administrateur::find($adminID);
+
+            $request->request->add(["admin"=>$admin]);
+
             return $next($request);
-
+        }
         return redirect()->route("adminLogin");
     }
 }

@@ -16,6 +16,8 @@
 
         <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.6.95/css/materialdesignicons.min.css">
 
+        @yield("custom_head")
+
     </head>
 
     <body>
@@ -41,15 +43,15 @@
                     <div class="red-bar-separator"></div>
 
                     <div class="text-center my-4 font-weight-bold">
-                    YAYA SORO
+                    {{ request("admin")->nom }} {{ request("admin")->prenoms }}
                 </div>
                     <div class="menu">
 
                         <ul class="list-unstyled components">
                             <li class="active my-3">
-                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle h5">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggler h5 font-weight-bold">
                                     <span class="mdi mdi-newspaper mr-4"></span>
-                                    ARTICLES
+                                    Articles
                                 </a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu">
 
@@ -61,38 +63,32 @@
                                 </ul>
                             </li>
                             <li class="my-3">
-                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle h5 my-4">
-                                    <span class="mdi mdi-web mr-4"></span>
-                                    PAGES
+                                <a href="{{ route("editAdminInfo") }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggler h5 my-4 font-weight-bold">
+                                    <span class="mdi mdi-account mr-4"></span>
+                                    Mes Informations
                                 </a>
-                                <ul class="collapse list-unstyled" id="pageSubmenu">
+                                {{--<ul class="collapse list-unstyled" id="pageSubmenu">--}}
 
-                                    <li class="px-2 py-1">
-                                        <a href="#">
-                                            <span class="mdi mdi-home mr-4"></span>
-                                            ACCEUIL
-                                        </a>
-                                    </li>
-                                    <li class="px-2 py-1">
-                                        <a href="#">
-                                            <span class="mdi mdi-shape mr-4"></span>
-                                            RUBRIQUE 1
-                                        </a>
-                                    </li>
-                                    <li class="px-2 py-1">
-                                        <a href="#">
-                                            <span class="mdi mdi-shape mr-4"></span>
+                                    {{--<li class="px-2 py-1">--}}
+                                        {{--<a href="#">--}}
+                                            {{--<span class="mdi mdi-account mr-4"></span>--}}
+                                            {{--ACCEUIL--}}
+                                        {{--</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="px-2 py-1">--}}
+                                        {{--<a href="#">--}}
+                                            {{--<span class="mdi mdi-shape mr-4"></span>--}}
+                                            {{--RUBRIQUE 1--}}
+                                        {{--</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="px-2 py-1">--}}
+                                        {{--<a href="#">--}}
+                                            {{--<span class="mdi mdi-shape mr-4"></span>--}}
 
-                                            RUBRIQUE 2
-                                        </a>
-                                    </li>
-                                    <li class="px-2 py-1">
-                                        <a href="#">RUBRIQUE 3</a>
-                                    </li>
-                                    <li class="px-2 py-1">
-                                        <a href="#">RUBRIQUE 4</a>
-                                    </li>
-                                </ul>
+                                            {{--RUBRIQUE 2--}}
+                                        {{--</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
                             </li>
                         </ul>
 

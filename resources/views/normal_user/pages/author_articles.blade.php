@@ -25,9 +25,9 @@
 
                     </div>
 
-                    <div class="mce-i-pagebreak">
+                    <div class="mce-i-pagebreak h2">
 
-                        {{--momomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeazemomomomomomoeazeazeazeazeaze--}}
+                        {{ $author->biographie }}
 
                     </div>
 

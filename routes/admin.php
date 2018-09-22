@@ -22,6 +22,7 @@ Route::group(
     Route::get('post/nouveau',"AdminViewController@showNewPost")->name("adminNewPost");
     Route::get('article/edit/{articleID}',"AdminViewController@showArticleEdit")->name("showArticleEdit");
     Route::get('post/page/{page}',"AdminViewController@showArticleListe")->name("adminPostList");
+    Route::get('edit/admin/info',"AdminViewController@showEditAdminInfo")->name("editAdminInfo");
 
 
     Route::post("post/nouveau","AdminActionController@newArticle")->name("actionNewArticle");
