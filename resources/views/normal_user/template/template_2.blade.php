@@ -223,7 +223,7 @@
                 <div class="row">
 
                     <div class="text-center col-6 offset-lg-3 px-1 py-3 text-white avenir-light">
-                        Copyright 2018 © 380 DEGRES Le Blog Tous droits réservés.
+                        Copyright 2018 © 380 DEGRE Le Blog Tous droits réservés.
 
                     </div>
 
