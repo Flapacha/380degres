@@ -19,7 +19,7 @@
 
                                 <a href="{{ route("articleDetail",["articleID"=>$article->id,"articleTitle"=>$article->title]) }}">
 
-                                    <img src="/tests/abidjan.png" width="264px" height="164px" alt="">
+                                    <img src="{{ $article->headerImage->path }}" width="100%"  alt="">
 
                                     <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
 

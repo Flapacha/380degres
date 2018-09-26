@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="my-4">
-                        <input type="password" class="form-control text-center my-3 font-weight-bold" name="password" style="color:#ed292c" placeholder="NOM D'UTILISATEUR">
+                        <input type="password" class="form-control text-center my-3 font-weight-bold" name="password" style="color:#ed292c" placeholder="MOT DE PASSE">
                     </div>
 
 
@@ -45,8 +45,8 @@
                     @endif
 
                     <div class="mt-5">
-                        <button class="btn btn-danger btn-icons btn-rounded">
-                            <i class="mdi mdi-check"></i>
+                        <button class="btn btn-outline-danger avenir-light  btn-rounded">
+                            CONNEXION <i class="mdi mdi-check"></i>
                         </button>
                     </div>
 

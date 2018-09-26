@@ -268,6 +268,20 @@ class BlogController extends Controller
 
         $newsletter->save();
 
+        if($choosedRubriques==null){
+
+            foreach (Categorie::all() as $rubrique){
+
+                $abonnementPivot = new AbonnementPivot();
+
+                $abonnementPivot->categorie_id = $rubrique->id;
+                $abonnementPivot->newsletter_id = $newsletter->id;
+
+                $abonnementPivot->save();
+
+            }
+            return redirect()->route('abonnementSuccess');
+        }
 
         foreach ($choosedRubriques as $choosedRubrique){
 
@@ -280,8 +294,10 @@ class BlogController extends Controller
 
             $abonnementPivot->save();
 
-            return redirect()->route('abonnementSuccess');
         }
+        return redirect()->route('abonnementSuccess');
+
+
 
     }
 

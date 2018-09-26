@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 @endsection
 
@@ -68,21 +69,23 @@
 
                                                     <div class="col-3">
 
-                                                        <button class="form-control btn btn-warning font-weight-bold text-white">
+                                                        <div id="modifier" class="form-control btn btn-warning font-weight-bold text-white">
 
                                                             MODIFIER
 
-                                                        </button>
+                                                        </div>
 
                                                     </div>
 
                                                     <div class="col-3">
 
-                                                        <button class="form-control btn btn-warning font-weight-bold text-white">
+                                                        <label for="nouveau" type="file" class="form-control btn btn-warning font-weight-bold text-white">
 
                                                             NOUVEAU
 
-                                                        </button>
+                                                        </label>
+
+                                                        <input class="d-none" type="file" id="nouveau">
 
                                                     </div>
 
@@ -156,28 +159,142 @@
 
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 
+
+    {{--    <textarea name="content" class="form-control my-editor">{!! old('content', $content) !!}</textarea>--}}
+
+@endsection
+
+@section("outWrapper")
+
+
+    <div id="imageEditionDialog" class="d-none">
+
+        <div class="row w-100">
+
+            <div class="col-12">
+
+
+            </div>
+
+            <div class="col-12">
+
+                <div id="imageEditionContent">
+
+
+
+                </div>
+
+                <div class="text-center">
+
+
+                    <button id="annuler" class="btn btn-danger font-weight-bold">
+
+                        ANNULER
+                        <i class="fab fa-check"></i>
+
+                    </button>
+
+
+                    <button id="valider" class="btn btn-success font-weight-bold">
+
+                        ENVOYER
+                        <i class="fab fa-check"></i>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+@endsection
+
+@section("customScript")
+
     <script>
 
-        $('.pp').croppie({
 
-            url: "/{{ $admin->pp->path }}",
+        $("#modifier").on("click",function(){
 
-            viewport: {
-                width: 256,
-                height: 256,
-                type: 'circle'
-            },
-            boundary: {
-                width: "100%",
-                height: 300
-            },
+            let el = $('#imageEditionContent').get();
 
-            enableResize: false
+            var crop = $('#imageEditionContent').croppie({
+
+                url: "/{{ $admin->pp->path }}",
+
+                viewport: {
+                    width: 256,
+                    height: 256,
+                    type: 'circle'
+                },
+                boundary: {
+                    width: "100%",
+                    height: 300
+                },
+
+                enableResize: false
+
+            });
+
+
+            $("#valider").off();
+            $("#valider").on("click",()=>{
+
+                crop.croppie("result","blob").then((blob)=>{
+
+
+                    var data = new FormData();
+                    data.append('file', blob,"image.png");
+
+                    axios.post(
+
+                        "{{ route("updateAdminImage") }}",data,
+                        {
+
+                        }
+
+                    );
+
+//                    var reader = new FileReader();
+//                    reader.addEventListener("loadend", function() {
+//
+//                        console.log(reader.result);
+//
+//
+//                    });
+//                    reader.readAsArrayBuffer(blob);
+//
+
+                });
+
+                let formData = new FormData();
+
+
+
+
+
+            });
+
+
+
+            $("#imageEditionDialog").removeClass("d-none");
 
         });
 
-    </script>
+        $("#annuler").on("click",()=>{
+            $("#imageEditionDialog").addClass("d-none");});
 
-    {{--    <textarea name="content" class="form-control my-editor">{!! old('content', $content) !!}</textarea>--}}
+
+
+
+
+    </script>
 
 @endsection

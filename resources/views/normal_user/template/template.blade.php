@@ -10,6 +10,15 @@
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126475197-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-126475197-1');
+    </script>
 
     @yield("custom_head")
 
@@ -41,12 +50,21 @@
 
                     <div class="col text-right align-items-center vertical-center d-none d-lg-flex">
 
-                        <div>
+                        <div class="vertical-align-middle text-center px-2 py-2">
 
                             <i class="fab fa-facebook-square facebook"></i>
                             <i class="fab fa-twitter-square twitter"></i>
                             <i class="fab fa-youtube youtube"></i>
                             <i class="fab fa-instagram instagram"></i>
+
+                            <a target="_blank" href="https://380degre.com" class="d-inline-block font-weight-bold">
+                                <i class="fab fas fa-globe"></i>
+                                <span class="d-blockz">
+                                    LE SITE WEB
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </span>
+                            </a>
+
 
                         </div>
 

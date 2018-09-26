@@ -16,7 +16,7 @@ Route::post('login',"AdminActionController@connectAdmin")->name("actionConnectAd
 Route::group(
     ["middleware"=>["adminMiddleware"]],function(){
 
-    Route::get('/',"AdminViewController@getHomeAdminPage");
+    Route::get('/',"AdminViewController@getHomeAdminPage")->name("adminHomePage");
 
 
     Route::get('post/nouveau',"AdminViewController@showNewPost")->name("adminNewPost");
@@ -27,5 +27,8 @@ Route::group(
 
     Route::post("post/nouveau","AdminActionController@newArticle")->name("actionNewArticle");
     Route::post("post/edit/{articleID}","AdminActionController@newArticle")->name("actionEditArticle");
-}
+    Route::post("update/admin/image","AdminActionController@updateAdminImage")->name("updateAdminImage");
+
+
+    }
 );

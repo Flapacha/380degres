@@ -19,7 +19,6 @@ class AdminMiddleware
 
         $adminID = session("admin",-1);
 
-        $adminID = 1;
 
         if($adminID!=-1) {
 
@@ -29,6 +28,8 @@ class AdminMiddleware
 
             return $next($request);
         }
+
+
         return redirect()->route("adminLogin");
     }
 }

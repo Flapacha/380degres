@@ -83,6 +83,26 @@ class AdminActionController extends Controller
         return $image;
     }
 
+    public function updateAdminImage(Request $request){
+
+//        dd($request->all());
+
+        $uploadedImage = $request->file("file");
+
+        $url = $uploadedImage->store("/admin/images","real_public");
+
+        $image = new Image();
+
+        $image->path = $url;
+        $image->save();
+
+        $admin = $request->admin;
+
+        $admin->image_id = $image->id;
+        $admin->save();
+
+    }
+
     public function connectAdmin(Request $request){
 
         $admin = Administrateur::where(
@@ -94,7 +114,6 @@ class AdminActionController extends Controller
 
         )->first();
 
-        dump($admin);
 
         if($admin==null){
 
@@ -104,9 +123,8 @@ class AdminActionController extends Controller
         }
 
         else{
-
-
             session(["admin"=>$admin->id]);
+            return redirect()->route("adminHomePage");
         }
 
     }

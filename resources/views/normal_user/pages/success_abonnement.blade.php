@@ -28,9 +28,9 @@
 
                 <div class="text-right px-3 ">
 
-                    <button class="btn btn-rounded background-color-380 avenir-light font-weight-bold">
+                    <a href="/" class="btn btn-rounded background-color-380 avenir-light font-weight-bold">
                         <i class="mdi mdi-chevron-right"></i> Retour
-                    </button>
+                    </a>
 
                 </div>
 

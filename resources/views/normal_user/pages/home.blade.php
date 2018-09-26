@@ -405,9 +405,11 @@
 
             <div class="col-12">
 
-                <form action="">
+                <form action="{{ route("actionAbonnement") }}" method="post">
 
-                    <input type="text" class="d-block w-75 px-3 py-2 border-0 h3 text-center mx-auto mt-4 avenir-light" placeholder="adresse@email.com">
+
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="text"  datatype="email" placeholder="adresse@email.com" name="email" required class="d-block w-75 px-3 py-2 border-0 h3 text-center mx-auto mt-4 avenir-light" placeholder="adresse@email.com">
 
 
                     <button class="mt-4 font-weight-bold d-block mx-auto  py-2 px-5 avenir-light radius-1 newsletter-submit-button">
