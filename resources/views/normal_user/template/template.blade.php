@@ -122,7 +122,7 @@
             @yield("content")
         </div>
 
-        <footer class="px-3 py-3">
+        <footer>
 
             <div class="container d-none">
 
@@ -196,7 +196,7 @@
 
             <div class="container-fluid">
 
-                <div class="row text-center">
+                <div class="row text-center px-3 py-3">
 
                     <div class="col-5 vertical-center">
                         <div class="footer-bar"></div>
@@ -234,6 +234,10 @@
 
                     </div>
 
+
+                    <div class="text-center col-12 px-3 py-4 font-weight-bold text-white avenir-light dark-bg">
+                        DEVELOPPED WITH <i class="fas fa-heart text-danger"></i> BY 380 DEGRE
+                    </div>
                 </div>
 
             </div>
