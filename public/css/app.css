@@ -36,7 +36,8 @@ header nav ul .actived a {
   color: #fff !important;
 }
 
-header .fab {
+header .fab,
+header .fas {
   font-size: 35px !important;
   letter-spacing: 10px;
 }
@@ -1198,12 +1199,12 @@ footer .lighned-color {
           align-items: center;
 }
 
-.home-slider > .title > div {
+.home-slider > .title > a {
   word-wrap: break-word;
   padding: 5rem !important;
 }
 
-.home-slider > .title > div:after {
+.home-slider > .title > a:after {
   content: '';
   position: absolute;
   top: 0;
