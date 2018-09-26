@@ -1179,6 +1179,10 @@ footer .lighned-color {
           flex: 1 1 auto;
 }
 
+.dark-bg {
+  background-color: #1b1b1b;
+}
+
 .home-slider {
   font-family: "Century Gothic";
   border-bottom: #ff646b solid 20px;

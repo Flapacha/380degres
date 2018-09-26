@@ -124,7 +124,7 @@
 
                             @php $i=0; @endphp
 
-                            <div class="col-lg-5 col-xs-12 mt-md-3 mt-3  border-dark article-preview text-center">
+                            <div class="col-lg-5 col-xs-12 mt-md-3 border-dark article-preview text-center">
 
                                 <div class="box-shadow">
 
@@ -173,7 +173,7 @@
                             </div>
 
 
-                            <div class="col-lg-5 offset-sm-1 col-xs-12 mt-md-3 mt-3 border-dark article-preview text-center">
+                            <div class="col-lg-5 offset-sm-1 col-xs-12 mt-md-3 border-dark article-preview text-center">
 
                                 <div class="box-shadow">
 
@@ -298,7 +298,7 @@
                     <div class="col-lg-3">
                         <div class="row">
 
-                            <div class="col-12 col-xs-12 mb-sm-3 border-dark article-preview text-center">
+                            <div class="col-12 col-xs-12 mb-sm-3 mt-md-3 border-dark article-preview text-center">
 
                                 <div class="box-shadow">
 
