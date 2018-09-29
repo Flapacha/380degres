@@ -38,7 +38,7 @@
             <div class="containere px-1 flex-heigt-by-content">
                 <ul class="row">
 
-                    <li class="col-md-11 col-lg-9 ">
+                    <li class="col-md-11 col-lg-7 ">
                         <a  class="d-md-block " href="{{ route("home") }}">
                             <img src="/images/logo.png" alt="Logo 380 Dégrés" class="logo py-1">
                             <span class="logo-description">
@@ -50,20 +50,22 @@
 
                     <div class="col text-right align-items-center vertical-center d-none d-lg-flex">
 
-                        <div class="vertical-align-middle text-center px-2 py-2">
+                        <div class="vertical-align-middle px-2 py-2">
+
+
+                            <a target="_blank" href="https://380degre.com" class="sfont-weight-bold">
+                                <span class="">
+                                    LE SITE WEB
+                                    {{--<i class="fas fa-sign-out-alt"></i>--}}
+                                </span>
+                                <i class="fab fas fa-globe"></i>
+                            </a>
+
 
                             <i class="fab fa-facebook-square facebook"></i>
                             <i class="fab fa-twitter-square twitter"></i>
                             <i class="fab fa-youtube youtube"></i>
                             <i class="fab fa-instagram instagram"></i>
-
-                            <a target="_blank" href="https://380degre.com" class="d-inline-block font-weight-bold">
-                                <i class="fab fas fa-globe"></i>
-                                <span class="d-blockz">
-                                    LE SITE WEB
-                                    <i class="fas fa-sign-out-alt"></i>
-                                </span>
-                            </a>
 
 
                         </div>
@@ -220,14 +222,16 @@
 
                 <div class="row">
 
-                    <div class="text-center col-6 offset-lg-3 px-1 py-3 text-white avenir-light">
-                        Copyright 2018 © 380 DEGRE Le Blog Tous droits réservés.
 
-                    </div>
+                    <div class="col-12 h3 text-white text-center">
 
-
-                    <div class="col-3 h3 text-white text-right  ">
-
+                        <a target="_blank" href="https://380degre.com" class="text-white">
+                                <span class="h5">
+                                    LE SITE WEB
+                                    {{--<i class="fas fa-sign-out-alt"></i>--}}
+                                </span>
+                            <i class="fab fas fa-globe"></i>
+                        </a>
                         <i class="fab fa-facebook-square"></i>
                         <i class="fab fa-twitter-square "></i>
                         <i class="fab fa-youtube facebook"></i>

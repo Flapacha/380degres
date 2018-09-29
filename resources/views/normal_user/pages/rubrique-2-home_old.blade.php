@@ -43,39 +43,33 @@
 
             @php $articleIndex++;$finalIndex=$articleIndex+3; @endphp
 
-            <div class="col-lg-3 d-md-none d-lg-block">
-
-                <div class="left-abonnement box-shadow ">
-
-                    <div class="head text-center px-3 py-3  avenir-light">
-                        ABONNEMENT
-                    </div>
-
-                    <div class="content px-3 py-3">
-
-                        <form action="{{ route("actionAbonnement") }}" method="post" class="form-group">
-
-                            <input type="hidden" value="{{ csrf_token() }}" name="_token">
-
-                            <label for="" class="text-center text-white font-weight-bold">ABONNEZ VOUS A NOTRE NEWSLETTER</label>
-                            <input type="text" class="form-control" datatype="email" placeholder="adresse@email.com" name="email" required>
-
-                            <button class="btn avenir-light form-control my-4">
-
-                                <span>S'ABONNER</span>
-                                <i class="glyph-icon glyphicon-save"></i>
-
-                            </button>
-
-                        </form>
-
-                    </div>
-
-                </div>
+            <div class="col-lg-3 avenir-light">
+            @for($articleIndex;$articleIndex<$finalIndex;$articleIndex++)
 
 
-            </div>
 
+
+                    <a href="{{ route("articleDetail",["articleID"=>$rubrique2[$articleIndex]->id,"articleTitle"=>$rubrique2[$articleIndex]->title]) }}" class="box-shadow d-block px-3 py-3 my-2">
+
+                        <div class="font-weight-bold h4 text-color-380">
+                            {{ $rubrique2[$articleIndex]->title }}
+                        </div>
+
+                        <div class="px-3 py-1 font-weight-bold">
+                            {{ $rubrique2[$articleIndex]->sous_title }}
+                        </div>
+
+                        <div class="text-right">
+                            par <span class="font-weight-bold text-color-380">{{ $rubrique2[0]->author->nom." ".$rubrique2[0]->author->prenom }}</span>
+                        </div>
+
+                    </a>
+
+
+
+            @endfor
+
+        </div>
         </div>
 
         <div class="row">
@@ -152,11 +146,11 @@
 
                     <div class="mt-5 col-12">
 
-                        {{--<div class=" float-right">--}}
+                        <div class=" float-right">
 
-                            {{--{{ $articles->links() }}--}}
+                            {{ $articles->links() }}
 
-                        {{--</div>--}}
+                        </div>
 
 
 
@@ -171,7 +165,82 @@
                 <div class="row">
 
 
+                        <div class="col-12 left-abonnement box-shadow mt-4 d-md-none d-lg-block">
 
+                            <div>
+
+                                <div class="head text-center px-3 py-3 mt-3 avenir-light">
+                                    ABONNEMENT
+                                </div>
+
+                                <div class="content px-3 py-3">
+
+                                    <form action="{{ route("actionAbonnement") }}" method="post" class="form-group">
+
+                                        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+
+                                        <label for="" class="text-center text-white font-weight-bold">ABONNEZ VOUS A NOTRE NEWSLETTER</label>
+                                        <input type="text" class="form-control" datatype="email" placeholder="adresse@email.com" name="email" required>
+
+                                        <button class="btn avenir-light form-control my-4">
+
+                                            <span>S'ABONNER</span>
+                                            <i class="glyph-icon glyphicon-save"></i>
+
+                                        </button>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+
+                    </div>
+
+                    <div class="col-12 o-rubrique mt-4 d-none">
+
+                        <div class="">
+
+                            <div class="head text-center px-3 py-3">
+                                VOIR AUSSI
+                            </div>
+
+                            <div class="content row px-3 py-3">
+
+                                <div class="col-12">
+
+                                    @foreach($voirAussis as $voirAussi)
+
+                                        <a href="{{ route("articleDetail",["articleID"=>$voirAussi->id,"articleTitle"=>$voirAussi->title]) }}" class="py-3 border-bottom border-dark item">
+
+                                            <div class="h4 avenir-light text-color-380">
+
+                                                {{ $voirAussi->title  }}
+
+                                                {{--TITRE DE L'ARTICLE--}}
+                                            </div>
+
+                                            <div class="avenir-light mini-description">
+
+                                                {{ $voirAussi->sous_title  }}
+
+                                                {{--Lorem ipsum dolor sit amet, consectetur ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...--}}
+                                            </div>
+
+                                        </a>
+
+                                    @endforeach
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
 
                     <div id="fb-root"></div>
                     <script>(function(d, s, id) {

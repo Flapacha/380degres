@@ -85,7 +85,7 @@
 
                                                         </label>
 
-                                                        <input class="d-none" type="file" id="nouveau">
+                                                        <input class="d-none" type="file" name="image" id="nouveau">
 
                                                     </div>
 
@@ -195,7 +195,7 @@
                     </button>
 
 
-                    <button id="valider" class="btn btn-success font-weight-bold">
+                    <button id="valider" class="btn btn-success my-3 mx-3 font-weight-bold">
 
                         ENVOYER
                         <i class="fab fa-check"></i>

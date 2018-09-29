@@ -87,7 +87,7 @@ class BlogController extends Controller
 
         });
 
-        $rubrique2Articles = Article::where("categorie_id",1)->paginate(8);
+        $rubrique2Articles = Article::where("categorie_id",1)->paginate(4);
 
         if($request->page==null or $request->page==1)
             $view = view("normal_user.pages.rubrique-2-home");
@@ -126,7 +126,7 @@ class BlogController extends Controller
 
         });
 
-        $rubrique2Articles = Article::where("categorie_id",2)->paginate(8);
+        $rubrique2Articles = Article::where("categorie_id",2)->paginate(4);
 
         if($request->page==null or $request->page==1)
             $view = view("normal_user.pages.rubrique-2-home");
@@ -164,7 +164,7 @@ class BlogController extends Controller
 
         });
 
-        $rubrique2Articles = Article::where("categorie_id",3)->paginate(8);
+        $rubrique2Articles = Article::where("categorie_id",3)->paginate(4);
 
         if($request->page==null or $request->page==1)
             $view = view("normal_user.pages.rubrique-2-home");
@@ -201,7 +201,7 @@ class BlogController extends Controller
 
         $author = Administrateur::find($authorID);
 
-        $articles = Article::where("author_id",$authorID)->paginate(8);
+        $articles = Article::where("author_id",$authorID)->paginate(4);
 
         return view("normal_user.pages.author_articles")->with("author",$author)->with("articles",$articles);
     }
