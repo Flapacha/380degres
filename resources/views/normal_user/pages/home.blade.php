@@ -130,7 +130,7 @@
 
                                     <a href="{{ route("articleDetail",["articleID"=>$rubrique2Home->id]) }}">
 
-                                        <img src="{{ $rubrique2Home->headerImage->path  }}" width="264px" height="164px"  alt="">
+                                        <img src="{{ $rubrique2Home->headerImage->path  }}" width="100%"   alt="">
 
                                         <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
 
@@ -179,7 +179,7 @@
 
                                     <a href="{{ route("articleDetail",["articleID"=>$rubrique3Home->id]) }}">
 
-                                        <img src="{{ $rubrique3Home->headerImage->path  }}" width="264px" height="164px"  alt="">
+                                        <img src="{{ $rubrique3Home->headerImage->path  }}" width="100%" height="164px"  alt="">
 
                                         <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
 
@@ -304,31 +304,16 @@
 
                                     <a href="{{ route("articleDetail",["articleID"=>$rubrique4Home->id]) }}">
 
-                                        <img src="{{ $rubrique4Home->headerImage->path  }}" width="264px" height="164px"  alt="">
+                                        <img src="{{ $rubrique4Home->headerImage->path  }}" width="100%" alt="">
 
                                         <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
 
-                                            <div class="m-auto w-75 bar my-3"></div>
-
-
-                                            <h3 class="h5 titre avenir-light my-4 ">{{ $rubrique4Home->title }}LE MARKETING POUR LES NULLES DE CHEZ NULL</h3>
-
-                                            <div class="m-auto w-75 bar my-3"></div>
-
-
-                                            <div class="text-left ml-3 mb-3 my-2 px-1 py-1 h4 avenir-light text-color-380 author">
-                                                {{ $rubrique4Home->author->nom." ".$rubrique4Home->author->prenoms }}
-                                            </div>
-
+                                            {{ $rubrique4Home->title }}
 
                                             <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
                                                 Marketing de reseau
                                             </div>
 
-                                            <div class="">
-
-                                                <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">{{ $rubrique4Home->created_at->format("d/m/Y à h:m")  }}</div>
-                                            </div>
 
 
                                             {{--<p>--}}
@@ -347,37 +332,6 @@
                             </div>
 
 
-
-                            <div class="col-12 o-rubrique">
-
-                                <div class="head text-center px-3 py-3">
-                                    VOIR AUSSI
-                                </div>
-
-                                <div class="content px-3 py-3">
-
-                                    @foreach($rubrique4 as $r4)
-
-                                        <a href="{{ route("articleDetail",["articleID"=>$r4->id]) }}" class="py-3 border-bottom border-dark item">
-
-                                            <div class="h4 avenir-light text-color-380">
-                                                {{--{{ $r4->title  }}--}}
-                                                {{ $r4->title }}
-                                            </div>
-
-                                            <div class="avenir-light mini-description">
-                                                {{--{{ $r4->sous_title  }}--}}
-                                                {!! $r4->sous_title !!}
-                                            </div>
-
-                                        </a>
-
-                                    @endforeach
-
-                                </div>
-
-                            </div>
-
                         </div>
 
                     </div>
@@ -390,7 +344,7 @@
 
         </div>
 
-        <div class="row bottom-newsletter px-1 py-5 px-lg-5 py-lg-5">
+        <div class="row bottom-newslfetter mt-3 background-color-380 px-1 py-2 px-lg-5 py-lg-2">
 
             <div class="col-12 text-center h2 font-ubuntu text-white">
 

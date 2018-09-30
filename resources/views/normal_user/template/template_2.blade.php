@@ -40,11 +40,11 @@
             <div class="containere px-1 flex-heigt-by-content">
                 <ul class="row">
 
-                    <li class="col-md-11 col-lg-7 ">
+                    <li class="col-md-11 col-lg-8 ">
                         <a  class="d-md-block " href="{{ route("home") }}">
                             <img src="/images/logo.png" alt="Logo 380 Dégrés" class="logo py-1">
                             <span class="logo-description">
-                           <span>AGENCE DE COMMUNICATION - LE BLOG</span>
+                           <span>AGENCE DE MARKETING & COMMUNICATION- LE BLOG</span>
                             </span>
                         </a>
 

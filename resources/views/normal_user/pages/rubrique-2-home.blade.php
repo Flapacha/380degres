@@ -17,6 +17,7 @@
 
             <a href="{{ route("articleDetail",["articleID"=>$rubrique2[0]->id,"articleTitle"=>$rubrique2[0]->title])  }}" class="col-lg-6 offset-lg-1">
 
+
                 <div>
 
                     <img src="{{ $rubrique2[0]->headerImage->path }}" width="100%" alt="">
