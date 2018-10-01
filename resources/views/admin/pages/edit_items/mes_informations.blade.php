@@ -229,6 +229,8 @@
 
                 url: "/{{ $admin->pp->path }}",
 
+                enableResize: false,
+
                 viewport: {
                     width: 256,
                     height: 256,
@@ -239,7 +241,6 @@
                     height: 300
                 },
 
-                enableResize: false
 
             });
 
