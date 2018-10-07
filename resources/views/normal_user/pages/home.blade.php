@@ -118,21 +118,21 @@
 
                 <div class="row">
 
-                    <div class="col-lg-9">
+                    <div class="col-lg-12">
 
                         <div class="row">
 
                             @php $i=0; @endphp
 
-                            <div class="col-lg-5 col-xs-12 mt-md-3 border-dark article-preview text-center">
+                            <div class="col-lg-4 col-xs-12 mt-md-3 border-dark article-preview text-center">
 
-                                <div class="box-shadow">
+                                <div class="box-shadow  h-100  description">
 
                                     <a href="{{ route("articleDetail",["articleID"=>$rubrique2Home->id]) }}">
 
-                                        <img src="{{ $rubrique2Home->headerImage->path  }}" width="100%"   alt="">
+                                        <img src="/images/slider-item.jpg" width="100%"   alt="">
 
-                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
+                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2">
 
                                             <div class="m-auto w-75 bar my-3"></div>
 
@@ -173,15 +173,15 @@
                             </div>
 
 
-                            <div class="col-lg-5 offset-sm-1 col-xs-12 mt-md-3 border-dark article-preview text-center">
+                            <div class="col-lg-4  col-xs-12 mt-md-3 border-dark article-preview text-center ">
 
-                                <div class="box-shadow">
+                                <div class="box-shadow h-100  description">
 
                                     <a href="{{ route("articleDetail",["articleID"=>$rubrique3Home->id]) }}">
 
-                                        <img src="{{ $rubrique3Home->headerImage->path  }}" width="100%" height="164px"  alt="">
+                                        <img src="/images/slider-item.jpg" width="100%"   alt="">
 
-                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
+                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2">
 
                                             <div class="m-auto w-75 bar my-3"></div>
 
@@ -222,6 +222,38 @@
                             </div>
 
 
+                            <div class="col-lg-4 col-xs-12 mt-md-3 border-dark article-preview text-center">
+
+                                <div class="box-shadow  h-100  description">
+
+                                    <a href="{{ route("articleDetail",["articleID"=>$rubrique4Home->id]) }}">
+
+                                        <img src="/images/slider-item.jpg" width="100%"   alt="">
+
+                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2">
+
+                                            {{ $rubrique4Home->title }}
+
+                                            <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
+                                                Marketing de reseau
+                                            </div>
+
+
+
+                                            {{--<p>--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
+                                            {{--</p>--}}
+
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+
+                            </div>
 
 
                             {{--<div class="row col-lg-12 r-4">--}}
@@ -293,43 +325,14 @@
 
 
 
+
+
                     </div>
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-9">
+
                         <div class="row">
 
-                            <div class="col-12 col-xs-12 mb-sm-3 mt-md-3 border-dark article-preview text-center">
-
-                                <div class="box-shadow">
-
-                                    <a href="{{ route("articleDetail",["articleID"=>$rubrique4Home->id]) }}">
-
-                                        <img src="{{ $rubrique4Home->headerImage->path  }}" width="100%" alt="">
-
-                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
-
-                                            {{ $rubrique4Home->title }}
-
-                                            <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
-                                                Marketing de reseau
-                                            </div>
-
-
-
-                                            {{--<p>--}}
-                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                            {{--DESCRIPTION DE L'ARTICLE LIMITE A QUELQUES CARACTERES--}}
-                                            {{--</p>--}}
-
-                                        </div>
-
-                                    </a>
-
-                                </div>
-
-
-                            </div>
 
 
                         </div>

@@ -98,57 +98,57 @@
                 <div class="row">
 
 
-                        @for($articleIndex;$articleIndex<count($articles);$articleIndex++)
+                        {{--@for($articleIndex;$articleIndex<count($articles);$articleIndex++)--}}
 
-                            @php
-                                $article = $articles[$articleIndex];
-                            @endphp
+                            {{--@php--}}
+                                {{--$article = $articles[$articleIndex];--}}
+                            {{--@endphp--}}
 
-                            <div class="col-lg-4 col-xs-12 mt-md-3 mt-3   offset-lg-1  border-dark article-preview text-center">
+                            {{--<div class="col-lg-4 col-xs-12 mt-md-3 mt-3   offset-lg-1  border-dark article-preview text-center">--}}
 
-                                <div class="box-shadow">
+                                {{--<div class="box-shadow">--}}
 
-                                    <a href="{{ route("articleDetail",["articleID"=>$article->id,"articleTitle"=>$article->title]) }}">
+                                    {{--<a href="{{ route("articleDetail",["articleID"=>$article->id,"articleTitle"=>$article->title]) }}">--}}
 
-                                        <img src="{{ $article->headerImage->path }}" width="100%"  alt="">
+                                        {{--<img src="{{ $article->headerImage->path }}" width="100%"  alt="">--}}
 
-                                        <div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">
+                                        {{--<div class="text-center px-lg-4 py-lg-4 px-1 py-2 description">--}}
 
-                                            <div class="text-left ml-3 mb-3 px-1 py-1 h4 avenir-light text-color-380 author">
-                                                {{ $article->author->nom." ".$article->author->prenom }}
-                                            </div>
+                                            {{--<div class="text-left ml-3 mb-3 px-1 py-1 h4 avenir-light text-color-380 author">--}}
+                                                {{--{{ $article->author->nom." ".$article->author->prenom }}--}}
+                                            {{--</div>--}}
 
-                                            <div class="m-auto w-75 bar my-3"></div>
+                                            {{--<div class="m-auto w-75 bar my-3"></div>--}}
 
-                                            <h3 class="h5 titre avenir-light mt-2">{{ $article->title }}</h3>
-
-
-                                            <div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">
-                                                {{ $article->sous_title }}
-                                            </div>
-
-                                            <div class="">
-
-                                                <div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">Aujourd'hui à 22:30</div>
-                                            </div>
+                                            {{--<h3 class="h5 titre avenir-light mt-2">{{ $article->title }}</h3>--}}
 
 
+                                            {{--<div class="d-none text-left mx-3 my-3 font-weight-bold text-color-380 ">--}}
+                                                {{--{{ $article->sous_title }}--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="">--}}
+
+                                                {{--<div class="d-inline-block w-50 bar"></div><div class="d-inline-block w-50">Aujourd'hui à 22:30</div>--}}
+                                            {{--</div>--}}
 
 
 
 
 
 
-                                        </div>
-
-                                    </a>
-
-                                </div>
 
 
-                            </div>
+                                        {{--</div>--}}
 
-                        @endfor
+                                    {{--</a>--}}
+
+                                {{--</div>--}}
+
+
+                            {{--</div>--}}
+
+                        {{--@endfor--}}
 
 
                     <div class="mt-5 col-12">

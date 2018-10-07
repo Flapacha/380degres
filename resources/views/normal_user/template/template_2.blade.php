@@ -125,7 +125,6 @@
         <div>
             @yield("content")
         </div>
-
         <footer>
 
             <div class="container d-none">
@@ -225,12 +224,19 @@
                 <div class="row">
 
 
+                    <div class="col-12 h3 text-white text-center">
 
-                    <div class="col-12 h3 text-white text-center  ">
-
+                        <a target="_blank" href="https://380degre.com" class="text-white">
+                                <span class="h5">
+                                    LE SITE WEB
+                                    {{--<i class="fas fa-sign-out-alt"></i>--}}
+                                </span>
+                            <i class="fab fas fa-globe"></i>
+                        </a>
                         <i class="fab fa-facebook-square"></i>
                         <i class="fab fa-twitter-square "></i>
                         <i class="fab fa-youtube facebook"></i>
+                        <i class="fab fa-instagram "></i>
 
                     </div>
 
