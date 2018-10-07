@@ -133,6 +133,8 @@
                                         <img src="/images/slider-item.jpg" width="100%"   alt="">
 
 
+
+
                                         <div class="text-center px-lg-4 py-lg-4 px-1 py-2">
 
                                             <div class="m-auto w-75 bar my-3"></div>
